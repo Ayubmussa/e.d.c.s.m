@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - elderly_companion
+
+  # Optional: Add PostgreSQL if not using Supabase
+  # postgres:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_DB: elderly_companion
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - elderly_companion
+
+networks:
+  elderly_companion:
+    driver: bridge
+
+volumes:
+  postgres_data:

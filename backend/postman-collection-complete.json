@@ -1,0 +1,153 @@
+{
+  "info": {
+    "name": "Elderly Digital Companion API - Complete Endpoints",
+    "description": "All working backend endpoints for the Elderly Digital Companion app, grouped by feature.",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000/api", "type": "string" },
+    { "key": "auth_token", "value": "", "type": "string" },
+    { "key": "user_id", "value": "", "type": "string" },
+    { "key": "medication_id", "value": "", "type": "string" },
+    { "key": "alert_id", "value": "", "type": "string" },
+    { "key": "contact_id", "value": "", "type": "string" },
+    { "key": "call_id", "value": "", "type": "string" },
+    { "key": "notification_id", "value": "", "type": "string" },
+    { "key": "target_user_id", "value": "", "type": "string" },
+    { "key": "session_id", "value": "", "type": "string" },
+    { "key": "voice_interaction_id", "value": "", "type": "string" },
+    { "key": "zone_id", "value": "", "type": "string" },
+    { "key": "checkin_id", "value": "", "type": "string" }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [ { "key": "token", "value": "{{auth_token}}", "type": "string" } ]
+  },
+  "item": [
+    
+    { "name": "Authentication", "item": [
+      { "name": "Register User", "request": { "method": "POST", "url": { "raw": "{{base_url}}/auth/register", "host": ["{{base_url}}"], "path": ["auth", "register"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\",\n  \"phoneNumber\": \"+1234567890\",\n  \"dateOfBirth\": \"1950-01-01\",\n  \"userType\": \"elderly\",\n  \"emergencyContact\": {\n    \"name\": \"Jane Doe\",\n    \"phoneNumber\": \"+1234567891\",\n    \"relationship\": \"daughter\"\n  }\n}" } } },
+      { "name": "Login User", "request": { "method": "POST", "url": { "raw": "{{base_url}}/auth/login", "host": ["{{base_url}}"], "path": ["auth", "login"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}" } } },
+      { "name": "Validate Email for Reset", "request": { "method": "POST", "url": { "raw": "{{base_url}}/auth/request-password-reset", "host": ["{{base_url}}"], "path": ["auth", "request-password-reset"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"email\": \"john.doe@example.com\"\n}" } } },
+      { "name": "Reset Password With Token", "request": { "method": "POST", "url": { "raw": "{{base_url}}/auth/reset-password-with-token", "host": ["{{base_url}}"], "path": ["auth", "reset-password-with-token"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"token\": \"reset-token\",\n  \"newPassword\": \"newpassword123\"\n}" } } },
+      { "name": "Get Profile", "request": { "method": "GET", "url": { "raw": "{{base_url}}/auth/profile", "host": ["{{base_url}}"], "path": ["auth", "profile"] } } },
+      { "name": "Update Profile", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/auth/profile", "host": ["{{base_url}}"], "path": ["auth", "profile"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"John Updated\",\n  \"lastName\": \"Doe Updated\",\n  \"phoneNumber\": \"+1234567890\"\n}" } } },
+      { "name": "Logout", "request": { "method": "POST", "url": { "raw": "{{base_url}}/auth/logout", "host": ["{{base_url}}"], "path": ["auth", "logout"] } } }
+    ] },
+    
+    { "name": "Family Management", "item": [
+      { "name": "Get Family Members", "request": { "method": "GET", "url": { "raw": "{{base_url}}/family/members", "host": ["{{base_url}}"], "path": ["family", "members"] } } },
+      { "name": "Invite Family Member", "request": { "method": "POST", "url": { "raw": "{{base_url}}/family/invite", "host": ["{{base_url}}"], "path": ["family", "invite"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"emailOrPhone\": \"caregiver@example.com\",\n  \"relationship\": \"child\",\n  \"accessLevel\": \"manage\",\n  \"message\": \"Primary caregiver\",\n  \"permissions\": [\"view_health_data\", \"manage_medications\"]\n}" } } },
+      { "name": "Get Pending Invites", "request": { "method": "GET", "url": { "raw": "{{base_url}}/family/pending-invites", "host": ["{{base_url}}"], "path": ["family", "pending-invites"] } } },
+      { "name": "Accept Family Invite", "request": { "method": "POST", "url": { "raw": "{{base_url}}/family/accept-invite", "host": ["{{base_url}}"], "path": ["family", "accept-invite"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"inviteId\": \"{{invite_id}}\"\n}" } } },
+      { "name": "Decline Family Invite", "request": { "method": "POST", "url": { "raw": "{{base_url}}/family/decline-invite", "host": ["{{base_url}}"], "path": ["family", "decline-invite"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"inviteId\": \"{{invite_id}}\"\n}" } } },
+      { "name": "Update Relationship Status", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/family/relationships/{{invite_id}}/status", "host": ["{{base_url}}"], "path": ["family", "relationships", "{{invite_id}}", "status"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"status\": \"active\"\n}" } } },
+      { "name": "Remove Relationship", "request": { "method": "DELETE", "url": { "raw": "{{base_url}}/family/relationships/{{invite_id}}", "host": ["{{base_url}}"], "path": ["family", "relationships", "{{invite_id}}"] } } },
+      { "name": "Get Permissions", "request": { "method": "GET", "url": { "raw": "{{base_url}}/family/relationships/{{invite_id}}/permissions", "host": ["{{base_url}}"], "path": ["family", "relationships", "{{invite_id}}", "permissions"] } } },
+      { "name": "Update Permissions", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/family/relationships/{{invite_id}}/permissions", "host": ["{{base_url}}"], "path": ["family", "relationships", "{{invite_id}}", "permissions"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"permissions\": [\"view_health_data\", \"manage_medications\", \"emergency_contact\"]\n}" } } },
+      { "name": "Get Elderly Data (Caregiver)", "request": { "method": "GET", "url": { "raw": "{{base_url}}/family/elderly/{{target_user_id}}/data", "host": ["{{base_url}}"], "path": ["family", "elderly", "{{target_user_id}}", "data"] } } },
+      { "name": "Get Caregiver Dashboard", "request": { "method": "GET", "url": { "raw": "{{base_url}}/family/dashboard", "host": ["{{base_url}}"], "path": ["family", "dashboard"] } } }
+    ] },
+    
+    { "name": "Health Management", "item": [
+      { "name": "Create Health Check-in", "request": { "method": "POST", "url": { "raw": "{{base_url}}/health/checkins", "host": ["{{base_url}}"], "path": ["health", "checkins"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"checkin_date\": \"2025-07-02\",\n  \"mood_rating\": 4,\n  \"energy_level\": 3,\n  \"pain_level\": 2,\n  \"sleep_quality\": 4,\n  \"notes\": \"Feeling good today\",\n  \"symptoms\": [\"mild headache\"],\n  \"activities\": [\"walking\", \"reading\"]\n}" } } },
+      { "name": "Get Health Check-ins", "request": { "method": "GET", "url": { "raw": "{{base_url}}/health/checkins", "host": ["{{base_url}}"], "path": ["health", "checkins"] } } },
+      { "name": "Get Today's Check-in", "request": { "method": "GET", "url": { "raw": "{{base_url}}/health/checkins/today", "host": ["{{base_url}}"], "path": ["health", "checkins", "today"] } } },
+      { "name": "Get Check-in by Date", "request": { "method": "GET", "url": { "raw": "{{base_url}}/health/checkins/{{date}}", "host": ["{{base_url}}"], "path": ["health", "checkins", "{{date}}"] } } },
+      { "name": "Update Health Check-in", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/health/checkins/{{checkin_id}}", "host": ["{{base_url}}"], "path": ["health", "checkins", "{{checkin_id}}"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"mood_rating\": 5,\n  \"energy_level\": 4,\n  \"pain_level\": 1,\n  \"sleep_quality\": 4,\n  \"notes\": \"Feeling much better today\",\n  \"symptoms\": [],\n  \"activities\": [\"walking\", \"reading\", \"gardening\"]\n}" } } },
+      { "name": "Get Health Trends", "request": { "method": "GET", "url": { "raw": "{{base_url}}/health/trends", "host": ["{{base_url}}"], "path": ["health", "trends"] } } },
+      { "name": "Get Health Summary", "request": { "method": "GET", "url": { "raw": "{{base_url}}/health/summary", "host": ["{{base_url}}"], "path": ["health", "summary"] } } }
+    ] },
+  
+    { "name": "Medications", "item": [
+      { "name": "Add Medication", "request": { "method": "POST", "url": { "raw": "{{base_url}}/medications", "host": ["{{base_url}}"], "path": ["medications"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Aspirin\",\n  \"dosage\": \"100mg\",\n  \"frequency\": \"once_daily\",\n  \"times\": [\"09:00\"],\n  \"start_date\": \"2025-01-01\",\n  \"notes\": \"Take with food\"\n}" } } },
+      { "name": "Get Today's Medications", "request": { "method": "GET", "url": { "raw": "{{base_url}}/medications/today", "host": ["{{base_url}}"], "path": ["medications", "today"] } } },
+      { "name": "Get Medications", "request": { "method": "GET", "url": { "raw": "{{base_url}}/medications", "host": ["{{base_url}}"], "path": ["medications"] } } },
+      { "name": "Update Medication", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/medications/{{medication_id}}", "host": ["{{base_url}}"], "path": ["medications", "{{medication_id}}"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Aspirin Updated\",\n  \"dosage\": \"100mg\",\n  \"frequency\": \"twice_daily\",\n  \"times\": [\"09:00\", \"21:00\"],\n  \"start_date\": \"2025-01-01\",\n  \"notes\": \"Take with food - updated\"\n}" } } },
+      { "name": "Delete Medication", "request": { "method": "DELETE", "url": { "raw": "{{base_url}}/medications/{{medication_id}}", "host": ["{{base_url}}"], "path": ["medications", "{{medication_id}}"] } } },
+      { "name": "Log Medication Taken", "request": { "method": "POST", "url": { "raw": "{{base_url}}/medications/{{medication_id}}/log", "host": ["{{base_url}}"], "path": ["medications", "{{medication_id}}", "log"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"taken\": true,\n  \"scheduled_time\": \"2025-01-02T09:00:00Z\",\n  \"notes\": \"Taken as scheduled\"\n}" } } },
+      { "name": "Get Medication Logs", "request": { "method": "GET", "url": { "raw": "{{base_url}}/medications/logs", "host": ["{{base_url}}"], "path": ["medications", "logs"] } } },
+      { "name": "Get Medication History", "request": { "method": "GET", "url": { "raw": "{{base_url}}/medications/history", "host": ["{{base_url}}"], "path": ["medications", "history"] } } },
+      { "name": "Get Medication Reminders", "request": { "method": "GET", "url": { "raw": "{{base_url}}/medications/reminders", "host": ["{{base_url}}"], "path": ["medications", "reminders"] } } },
+      { "name": "Snooze Medication Reminder", "request": { "method": "POST", "url": { "raw": "{{base_url}}/medications/{{medication_id}}/snooze", "host": ["{{base_url}}"], "path": ["medications", "{{medication_id}}", "snooze"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"snooze_minutes\": 15\n}" } } },
+      { "name": "Get Medication Stats", "request": { "method": "GET", "url": { "raw": "{{base_url}}/medications/stats", "host": ["{{base_url}}"], "path": ["medications", "stats"] } } }
+    ] },
+    
+    { "name": "Emergency", "item": [
+      { "name": "Trigger Emergency Alert", "request": { "method": "POST", "url": { "raw": "{{base_url}}/emergency/alerts", "host": ["{{base_url}}"], "path": ["emergency", "alerts"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"alert_type\": \"manual\",\n  \"location\": {\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060,\n    \"address\": \"New York, NY\"\n  },\n  \"message\": \"Need immediate assistance\"\n}" } } },
+      { "name": "Create Urgent Emergency Alert", "request": { "method": "POST", "url": { "raw": "{{base_url}}/emergency/alerts/urgent", "host": ["{{base_url}}"], "path": ["emergency", "alerts", "urgent"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"alert_type\": \"urgent\",\n  \"location\": {\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060,\n    \"address\": \"New York, NY\"\n  },\n  \"message\": \"Urgent assistance needed immediately\"\n}" } } },
+      { "name": "Get Emergency Alerts", "request": { "method": "GET", "url": { "raw": "{{base_url}}/emergency/alerts", "host": ["{{base_url}}"], "path": ["emergency", "alerts"] } } },
+      { "name": "Resolve Emergency Alert", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/emergency/alerts/{{alert_id}}/status", "host": ["{{base_url}}"], "path": ["emergency", "alerts", "{{alert_id}}", "status"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"status\": \"resolved\",\n  \"resolved_by\": \"Emergency services contacted\"\n}" } } },
+      { "name": "Send Emergency Email", "request": { "method": "POST", "url": { "raw": "{{base_url}}/emergency/send-email", "host": ["{{base_url}}"], "path": ["emergency", "send-email"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"recipientEmails\": [\"emergency@example.com\"],\n  \"subject\": \"Emergency Alert\",\n  \"message\": \"This is an emergency situation requiring immediate attention\",\n  \"location\": {\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060,\n    \"address\": \"New York, NY\"\n  }\n}" } } },
+      { "name": "Check Daily Email Limit", "request": { "method": "GET", "url": { "raw": "{{base_url}}/emergency/email-limit", "host": ["{{base_url}}"], "path": ["emergency", "email-limit"] } } },
+      { "name": "Detect Emergency", "request": { "method": "POST", "url": { "raw": "{{base_url}}/emergency/detect", "host": ["{{base_url}}"], "path": ["emergency", "detect"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"sensor_data\": {\n    \"accelerometer\": {\n      \"x\": 15,\n      \"y\": 10,\n      \"z\": 5\n    },\n    \"gyroscope\": {\n      \"x\": 2,\n      \"y\": 3,\n      \"z\": 1\n    },\n    \"inactivity_minutes\": 30\n  },\n  \"location\": {\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060\n  }\n}" } } },
+      { "name": "Get Emergency Settings", "request": { "method": "GET", "url": { "raw": "{{base_url}}/emergency/settings", "host": ["{{base_url}}"], "path": ["emergency", "settings"] } } },
+      { "name": "Update Emergency Settings", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/emergency/settings", "host": ["{{base_url}}"], "path": ["emergency", "settings"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"fallDetectionEnabled\": true,\n  \"sosEnabled\": true,\n  \"fallThreshold\": 25,\n  \"inactivityEnabled\": true,\n  \"inactivityThreshold\": 150,\n  \"samplingRate\": 15\n}" } } },
+      { "name": "Create Emergency Contact", "request": { "method": "POST", "url": { "raw": "{{base_url}}/emergency/contacts", "host": ["{{base_url}}"], "path": ["emergency", "contacts"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Emergency Contact\",\n  \"phone_number\": \"+1234567892\",\n  \"relationship\": \"friend\",\n  \"is_primary\": true\n}" } } },
+      { "name": "Get Emergency Contacts", "request": { "method": "GET", "url": { "raw": "{{base_url}}/emergency/contacts", "host": ["{{base_url}}"], "path": ["emergency", "contacts"] } } },
+      { "name": "Update Emergency Contact", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/emergency/contacts/{{contact_id}}", "host": ["{{base_url}}"], "path": ["emergency", "contacts", "{{contact_id}}"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Updated Emergency Contact\",\n  \"phone_number\": \"+1234567893\",\n  \"relationship\": \"family\",\n  \"is_primary\": false\n}" } } },
+      { "name": "Delete Emergency Contact", "request": { "method": "DELETE", "url": { "raw": "{{base_url}}/emergency/contacts/{{contact_id}}", "host": ["{{base_url}}"], "path": ["emergency", "contacts", "{{contact_id}}"] } } }
+    ] },
+    
+    { "name": "Sensors", "item": [
+      { "name": "Process Sensor Data", "request": { "method": "POST", "url": { "raw": "{{base_url}}/sensors/data", "host": ["{{base_url}}"], "path": ["sensors", "data"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"sensorType\": \"accelerometer\",\n  \"data\": {\n    \"x\": 10,\n    \"y\": 5,\n    \"z\": 2\n  },\n  \"timestamp\": \"2025-07-17T10:00:00Z\"\n}" } } },
+      { "name": "Get Monitoring Status", "request": { "method": "GET", "url": { "raw": "{{base_url}}/sensors/monitoring-status", "host": ["{{base_url}}"], "path": ["sensors", "monitoring-status"] } } },
+      { "name": "Get Sensor History", "request": { "method": "GET", "url": { "raw": "{{base_url}}/sensors/history", "host": ["{{base_url}}"], "path": ["sensors", "history"] } } },
+      { "name": "Get Activity Summary", "request": { "method": "GET", "url": { "raw": "{{base_url}}/sensors/activity-summary", "host": ["{{base_url}}"], "path": ["sensors", "activity-summary"] } } },
+      { "name": "Get Sensor Settings", "request": { "method": "GET", "url": { "raw": "{{base_url}}/sensors/settings", "host": ["{{base_url}}"], "path": ["sensors", "settings"] } } },
+      { "name": "Update Sensor Settings", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/sensors/settings", "host": ["{{base_url}}"], "path": ["sensors", "settings"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"samplingRate\": 10,\n  \"threshold\": 20\n}" } } },
+      { "name": "Test Sensor Connection", "request": { "method": "POST", "url": { "raw": "{{base_url}}/sensors/test-connection", "host": ["{{base_url}}"], "path": ["sensors", "test-connection"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"sensorType\": \"accelerometer\"\n}" } } },
+      { "name": "Calibrate Sensors", "request": { "method": "POST", "url": { "raw": "{{base_url}}/sensors/calibrate", "host": ["{{base_url}}"], "path": ["sensors", "calibrate"] }, "header": [{"key": "Content-Type", "value": "application/json"}] } }
+    ] },
+    
+    { "name": "Geofencing", "item": [
+      { "name": "Get Safe Zone", "request": { "method": "GET", "url": { "raw": "{{base_url}}/geofencing/safe-zones/{{zone_id}}", "host": ["{{base_url}}"], "path": ["geofencing", "safe-zones", "{{zone_id}}"] } } },
+      { "name": "Create Safe Zone", "request": { "method": "POST", "url": { "raw": "{{base_url}}/geofencing/safe-zones", "host": ["{{base_url}}"], "path": ["geofencing", "safe-zones"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Home\",\n  \"coordinates\": [{\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060\n  }],\n  \"radius\": 100\n}" } } },
+      { "name": "Update Safe Zone", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/geofencing/safe-zones/{{zone_id}}", "host": ["{{base_url}}"], "path": ["geofencing", "safe-zones", "{{zone_id}}"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Home Updated\",\n  \"radius\": 150\n}" } } },
+      { "name": "Delete Safe Zone", "request": { "method": "DELETE", "url": { "raw": "{{base_url}}/geofencing/safe-zones/{{zone_id}}", "host": ["{{base_url}}"], "path": ["geofencing", "safe-zones", "{{zone_id}}"] } } },
+      { "name": "Get Location Events", "request": { "method": "GET", "url": { "raw": "{{base_url}}/geofencing/location-events", "host": ["{{base_url}}"], "path": ["geofencing", "location-events"] } } },
+      { "name": "Process Location Update", "request": { "method": "POST", "url": { "raw": "{{base_url}}/geofencing/location-update", "host": ["{{base_url}}"], "path": ["geofencing", "location-update"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"latitude\": 40.7128,\n  \"longitude\": -74.0060\n}" } } },
+      { "name": "Initialize Zone Status", "request": { "method": "POST", "url": { "raw": "{{base_url}}/geofencing/initialize-status", "host": ["{{base_url}}"], "path": ["geofencing", "initialize-status"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"zoneId\": \"{{zone_id}}\"\n}" } } },
+      { "name": "Reset Zone Status", "request": { "method": "POST", "url": { "raw": "{{base_url}}/geofencing/reset-status", "host": ["{{base_url}}"], "path": ["geofencing", "reset-status"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"zoneId\": \"{{zone_id}}\"\n}" } } },
+      { "name": "Get Geofencing Status", "request": { "method": "GET", "url": { "raw": "{{base_url}}/geofencing/status", "host": ["{{base_url}}"], "path": ["geofencing", "status"] } } },
+      { "name": "Get Zone History", "request": { "method": "GET", "url": { "raw": "{{base_url}}/geofencing/zone-history/{{zone_id}}", "host": ["{{base_url}}"], "path": ["geofencing", "zone-history", "{{zone_id}}"] } } }
+    ] },
+    
+    { "name": "Profile Image", "item": [
+      { "name": "Upload Profile Image", "request": { "method": "POST", "url": { "raw": "{{base_url}}/profile/upload-image", "host": ["{{base_url}}"], "path": ["profile", "upload-image"] }, "header": [{"key": "Content-Type", "value": "multipart/form-data"}], "body": { "mode": "formdata", "formdata": [ { "key": "image", "type": "file", "src": "profile.jpg" } ] } } },
+      { "name": "Get Profile Image", "request": { "method": "GET", "url": { "raw": "{{base_url}}/profile/image/{{filename}}", "host": ["{{base_url}}"], "path": ["profile", "image", "{{filename}}"] } } }
+    ] },
+    
+    { "name": "Voice", "item": [
+      { "name": "Process Audio", "request": { "method": "POST", "url": { "raw": "{{base_url}}/voice/process-audio", "host": ["{{base_url}}"], "path": ["voice", "process-audio"] }, "header": [{"key": "Content-Type", "value": "multipart/form-data"}], "body": { "mode": "formdata", "formdata": [ { "key": "audio", "type": "file", "src": "audio.wav" } ] } } },
+      { "name": "Process Text Command", "request": { "method": "POST", "url": { "raw": "{{base_url}}/voice/process-text", "host": ["{{base_url}}"], "path": ["voice", "process-text"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"command\": \"play music\"\n}" } } },
+      { "name": "Get Voice History", "request": { "method": "GET", "url": { "raw": "{{base_url}}/voice/history", "host": ["{{base_url}}"], "path": ["voice", "history"] } } },
+      { "name": "Get Voice Commands", "request": { "method": "GET", "url": { "raw": "{{base_url}}/voice/commands", "host": ["{{base_url}}"], "path": ["voice", "commands"] } } }
+    ] },
+    
+    { "name": "Brain Training", "item": [
+      { "name": "Get Available Exercises", "request": { "method": "GET", "url": { "raw": "{{base_url}}/brainTraining/exercises", "host": ["{{base_url}}"], "path": ["brainTraining", "exercises"] } } },
+      { "name": "Generate Exercise", "request": { "method": "POST", "url": { "raw": "{{base_url}}/brainTraining/exercises/generate", "host": ["{{base_url}}"], "path": ["brainTraining", "exercises", "generate"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"type\": \"memory\",\n  \"difficulty\": \"easy\"\n}" } } },
+      { "name": "Create Session", "request": { "method": "POST", "url": { "raw": "{{base_url}}/brainTraining/sessions", "host": ["{{base_url}}"], "path": ["brainTraining", "sessions"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"exerciseId\": \"123\",\n  \"userId\": \"{{user_id}}\"\n}" } } },
+      { "name": "Get Sessions", "request": { "method": "GET", "url": { "raw": "{{base_url}}/brainTraining/sessions", "host": ["{{base_url}}"], "path": ["brainTraining", "sessions"] } } },
+      { "name": "Get Sessions By Type", "request": { "method": "GET", "url": { "raw": "{{base_url}}/brainTraining/sessions/type/{{session_type}}", "host": ["{{base_url}}"], "path": ["brainTraining", "sessions", "type", "{{session_type}}"] } } },
+      { "name": "Complete Session", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/brainTraining/sessions/{{session_id}}/complete", "host": ["{{base_url}}"], "path": ["brainTraining", "sessions", "{{session_id}}", "complete"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"completed\": true,\n  \"score\": 95\n}" } } },
+      { "name": "Get Progress Stats", "request": { "method": "GET", "url": { "raw": "{{base_url}}/brainTraining/progress", "host": ["{{base_url}}"], "path": ["brainTraining", "progress"] } } }
+    ] },
+    
+    { "name": "Notifications", "item": [
+      { "name": "Register Device", "request": { "method": "POST", "url": { "raw": "{{base_url}}/notifications/register-device", "host": ["{{base_url}}"], "path": ["notifications", "register-device"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"device_token\": \"ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]\",\n  \"platform\": \"ios\"\n}" } } },
+      { "name": "Remove Device", "request": { "method": "POST", "url": { "raw": "{{base_url}}/notifications/remove-device", "host": ["{{base_url}}"], "path": ["notifications", "remove-device"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"device_token\": \"ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]\"\n}" } } },
+      { "name": "Get Device Subscriptions", "request": { "method": "GET", "url": { "raw": "{{base_url}}/notifications/devices", "host": ["{{base_url}}"], "path": ["notifications", "devices"] } } },
+      { "name": "Get Notification Settings", "request": { "method": "GET", "url": { "raw": "{{base_url}}/notifications/settings", "host": ["{{base_url}}"], "path": ["notifications", "settings"] } } },
+      { "name": "Update Notification Settings", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/notifications/settings", "host": ["{{base_url}}"], "path": ["notifications", "settings"] }, "header": [{"key": "Content-Type", "value": "application/json"}] } },
+      { "name": "Send Test Notification", "request": { "method": "POST", "url": { "raw": "{{base_url}}/notifications/send-test", "host": ["{{base_url}}"], "path": ["notifications", "send-test"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"message\": \"Test notification\"\n}" } } },
+      { "name": "Send Custom Notification", "request": { "method": "POST", "url": { "raw": "{{base_url}}/notifications/send-custom", "host": ["{{base_url}}"], "path": ["notifications", "send-custom"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"message\": \"Custom notification\",\n  \"userId\": \"{{user_id}}\"\n}" } } },
+      { "name": "Send Emergency Contacts SMS", "request": { "method": "POST", "url": { "raw": "{{base_url}}/notifications/send-emergency-sms", "host": ["{{base_url}}"], "path": ["notifications", "send-emergency-sms"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"message\": \"Emergency SMS\"\n}" } } },
+      { "name": "Send User SMS", "request": { "method": "POST", "url": { "raw": "{{base_url}}/notifications/send-user-sms", "host": ["{{base_url}}"], "path": ["notifications", "send-user-sms"] }, "header": [{"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"message\": \"User SMS\",\n  \"userId\": \"{{user_id}}\"\n}" } } },
+      { "name": "Get Notification History", "request": { "method": "GET", "url": { "raw": "{{base_url}}/notifications/history", "host": ["{{base_url}}"], "path": ["notifications", "history"] } } },
+      { "name": "Mark Notification Read", "request": { "method": "PUT", "url": { "raw": "{{base_url}}/notifications/history/{{notification_id}}/read", "host": ["{{base_url}}"], "path": ["notifications", "history", "{{notification_id}}", "read"] }, "header": [{"key": "Content-Type", "value": "application/json"}] } }
+    ] }
+  ]
+}
