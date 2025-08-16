@@ -278,21 +278,21 @@ const createStyles = (theme) =>
       marginBottom: theme.spacing.lg,
     },
     label: {
-      color: theme.colors.textOnPrimary,
+      color: '#ffffff',
       fontWeight: 'bold',
-      fontSize: theme.typography.bodyLarge.fontSize,
+      fontSize: 18, // increased from 16
       alignSelf: 'flex-start',
-      marginLeft: theme.spacing.sm,
+      marginLeft: 8,
       marginBottom: theme.spacing.sm,
     },
     inputWrapper: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: theme.colors.surface,
-      borderRadius: theme.roundness,
+      backgroundColor: '#ffffff',
+      borderRadius: 24,
       paddingHorizontal: theme.spacing.md,
-      minHeight: 56,
-      shadowColor: theme.colors.shadow,
+      minHeight: 56, // increased height for elderly users
+      shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.08,
       shadowRadius: 8,
@@ -303,36 +303,36 @@ const createStyles = (theme) =>
     },
     input: {
       flex: 1,
-      fontSize: theme.typography.bodyLarge.fontSize,
+      fontSize: 18, // increased from 16
       color: theme.colors.text.primary,
       paddingVertical: theme.spacing.md,
-      minHeight: 24,
+      minHeight: 24, // ensure text is properly sized
     },
     validationIcon: {
       marginLeft: theme.spacing.sm,
     },
     errorText: {
-      color: theme.colors.error,
-      fontSize: theme.typography.bodyMedium.fontSize,
+      color: '#ff4444',
+      fontSize: 16, // increased from 13
       marginTop: theme.spacing.sm,
-      marginLeft: theme.spacing.sm,
+      marginLeft: 8,
       alignSelf: 'flex-start',
     },
     resetButton: {
       width: '100%',
-      borderRadius: theme.roundness,
+      borderRadius: 24,
       marginTop: theme.spacing.xl,
-      backgroundColor: theme.colors.primary,
+      backgroundColor: '#3BA4F9',
       elevation: 3,
-      shadowColor: theme.colors.primary,
+      shadowColor: '#3BA4F9',
       shadowOffset: { width: 0, height: 3 },
       shadowOpacity: 0.15,
       shadowRadius: 10,
-      minHeight: 56,
+      minHeight: 56, // elderly-friendly height
     },
     resetButtonDisabled: {
-      backgroundColor: theme.colors.disabled,
-      shadowColor: theme.colors.disabled,
+      backgroundColor: '#cccccc',
+      shadowColor: '#cccccc',
     },
     backToLoginContainer: {
       flexDirection: 'row',
@@ -342,13 +342,13 @@ const createStyles = (theme) =>
       paddingVertical: theme.spacing.sm,
     },
     backToLoginText: {
-      color: theme.colors.textOnPrimary,
-      fontSize: theme.typography.bodyMedium.fontSize,
+      color: '#ffffff',
+      fontSize: 16, // increased from 14
     },
     backToLoginLink: {
-      color: theme.colors.primary,
+      color: '#3BA4F9',
       fontWeight: 'bold',
-      fontSize: theme.typography.bodyMedium.fontSize,
+      fontSize: 16, // increased from 14
       textDecorationLine: 'underline',
     },
   });

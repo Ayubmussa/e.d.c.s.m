@@ -246,8 +246,8 @@ const createStyles = (theme) => StyleSheet.create({
   },
   sectionTitle: {
     fontWeight: 'bold',
-    fontSize: theme.typography.h6.fontSize,
-    marginBottom: theme.spacing.sm,
+    fontSize: 18,
+    marginBottom: 6,
     color: theme.colors.primary,
   },
   infoRowGroup: {

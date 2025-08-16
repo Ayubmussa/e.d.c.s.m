@@ -105,16 +105,19 @@ const commonTypography = {
     fontSize: 22,
     fontFamily: 'System',
     fontWeight: '600',
+    color: '#1e3a8a', // deep blue
   },
   cardSubtitle: {
     fontSize: 18,
     fontFamily: 'System',
     fontWeight: '400',
+    color: '#3b82f6', // medium blue
   },
   cardContent: {
     fontSize: 18,
     fontFamily: 'System',
     fontWeight: '400',
+    color: '#1f2937', // dark gray for readability
   },
 };
 
@@ -221,9 +224,9 @@ const commonFonts = {
 // Elderly-friendly blue color palette with high contrast and accessibility
 const elderlyFriendlyPalette = {
   // Primary blues - main interactive elements
-  primary: '#60a5fa',           // consistent light blue for both themes
-  primaryLight: '#93c5fd',      // lighter blue for secondary elements
-  primaryDark: '#2563eb',       // darker blue for emphasis
+  primary: '#2563eb',           // vibrant blue for primary actions
+  primaryLight: '#3b82f6',      // lighter blue for secondary elements
+  primaryDark: '#1d4ed8',       // darker blue for emphasis
   primarySoft: '#dbeafe',       // very light blue for backgrounds
   
   // Secondary blues - supporting elements
@@ -232,8 +235,8 @@ const elderlyFriendlyPalette = {
   secondaryDark: '#1e3a8a',     // very dark blue for headings
   
   // Interactive elements
-  buttonBg: '#60a5fa',          // primary button background (light blue)
-  buttonText: '#1e293b',        // dark text for contrast on light blue
+  buttonBg: '#2563eb',          // primary button background
+  buttonText: '#ffffff',        // button text (white for contrast)
   buttonBgSecondary: '#e0f2fe', // secondary button background
   buttonTextSecondary: '#1e40af', // secondary button text
   

@@ -82,7 +82,7 @@ const BrainTrainingScreen = (props) => {
       type: 'memory',
       name: 'Memory Recall',
       icon: 'brain',
-      color: theme.colors.primary,
+      color: '#2196F3',
       description: 'Test your memory with number sequences',
       games: ['Number Sequence Memory'],
       game: {
@@ -100,7 +100,7 @@ const BrainTrainingScreen = (props) => {
       type: 'attention',
       name: 'Focus Challenge',
       icon: 'eye',
-      color: theme.colors.secondary,
+      color: '#FF9800',
       description: 'Find targets among distractors',
       games: ['Focus Finder'],
       game: {
@@ -118,7 +118,7 @@ const BrainTrainingScreen = (props) => {
       type: 'language',
       name: 'Word Puzzle',
       icon: 'alphabetical',
-      color: theme.colors.success,
+      color: '#4CAF50',
       description: 'Unscramble letters to form words',
       games: ['Anagram Solver'],
       game: {
@@ -136,7 +136,7 @@ const BrainTrainingScreen = (props) => {
       type: 'logic',
       name: 'Logic Puzzle',
       icon: 'puzzle',
-      color: theme.colors.info,
+      color: '#9C27B0',
       description: 'Solve number puzzles with logic',
       games: ['Sudoku'],
       game: {
@@ -154,7 +154,7 @@ const BrainTrainingScreen = (props) => {
       type: 'processing',
       name: 'Speed Math',
       icon: 'speedometer',
-      color: theme.colors.warning,
+      color: '#F44336',
       description: 'Solve math problems quickly',
       games: ['Quick Math'],
       game: {
@@ -172,7 +172,7 @@ const BrainTrainingScreen = (props) => {
       type: 'spatial',
       name: 'Spatial Rotation',
       icon: 'cube',
-      color: theme.colors.dark,
+      color: '#607D8B',
       description: 'Visualize object rotations',
       games: ['Mental Rotation'],
       game: {
@@ -543,7 +543,6 @@ const createStyles = (theme) => StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: theme.spacing.md,
-    backgroundColor: theme.colors.primary + '20',
   },
   categoryName: {
     textAlign: 'center',

@@ -610,11 +610,11 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.text.secondary,
   },
   shareButtonText: {
-    color: theme.colors.textOnPrimary,
+    color: theme.colors.white,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: theme.spacing.sm,
+    marginLeft: 8,
   },
 });
 

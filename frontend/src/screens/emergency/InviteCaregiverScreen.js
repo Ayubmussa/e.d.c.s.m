@@ -255,7 +255,7 @@ const InviteCaregiverScreen = ({ navigation }) => {
             <MaterialCommunityIcons 
               name={isLoading ? "loading" : "send"} 
               size={20} 
-              color={theme.colors.textOnPrimary} 
+              color="white" 
               style={{ marginRight: 8 }}
             />
             <Text style={styles.sendButtonText}>
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
   },
   sendButtonText: {
     fontSize: theme.typography.button.fontSize,
-    color: theme.colors.textOnPrimary,
+    color: 'white',
     fontWeight: 'bold',
   },
 });

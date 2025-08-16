@@ -110,7 +110,7 @@ const DataPrivacyScreen = ({ navigation }) => {
           <MaterialCommunityIcons 
             name="arrow-left" 
             size={24} 
-            color={theme.colors.textOnPrimary} 
+            color={theme.colors.white} 
           />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Data & Privacy</Text>
@@ -284,97 +284,97 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: theme.colors.primary,
-    paddingTop: theme.spacing.xxl,
-    paddingBottom: theme.spacing.lg,
-    paddingHorizontal: theme.spacing.lg,
+    paddingTop: 50,
+    paddingBottom: 20,
+    paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
   },
   backButton: {
-    marginRight: theme.spacing.md,
+    marginRight: 15,
   },
   headerTitle: {
-    color: theme.colors.textOnPrimary,
+    color: theme.colors.white,
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     fontWeight: 'bold',
   },
   content: {
     flex: 1,
-    padding: theme.spacing.lg,
+    padding: 20,
   },
   overviewCard: {
     backgroundColor: theme.colors.surface,
-    padding: theme.spacing.lg,
-    borderRadius: theme.roundness,
+    padding: 20,
+    borderRadius: 12,
     alignItems: 'center',
-    marginBottom: theme.spacing.xl,
+    marginBottom: 30,
   },
   overviewTitle: {
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: 'bold',
-    marginTop: theme.spacing.md,
-    marginBottom: theme.spacing.sm,
+    marginTop: 12,
+    marginBottom: 8,
   },
   overviewText: {
     fontSize: theme.typography.body2.fontSize,
     fontFamily: theme.typography.body2.fontFamily,
     color: theme.colors.text.secondary,
     textAlign: 'center',
-    lineHeight: theme.typography.body2.lineHeight,
+    lineHeight: 20,
   },
   section: {
-    marginBottom: theme.spacing.xl,
+    marginBottom: 30,
   },
   sectionTitle: {
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: 'bold',
-    marginBottom: theme.spacing.md,
+    marginBottom: 16,
   },
   settingItem: {
     backgroundColor: theme.colors.surface,
     flexDirection: 'row',
     alignItems: 'flex-start',
-    padding: theme.spacing.md,
-    borderRadius: theme.roundness,
-    marginBottom: theme.spacing.md,
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
   },
   settingIcon: {
-    marginRight: theme.spacing.md,
-    marginTop: theme.spacing.xxs,
+    marginRight: 12,
+    marginTop: 2,
   },
   settingContent: {
     flex: 1,
-    marginRight: theme.spacing.md,
+    marginRight: 12,
   },
   settingTitle: {
     fontSize: theme.typography.body1.fontSize,
     fontFamily: theme.typography.body1.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: '600',
-    marginBottom: theme.spacing.xxs,
+    marginBottom: 4,
   },
   settingSubtitle: {
     fontSize: theme.typography.caption.fontSize,
     fontFamily: theme.typography.caption.fontFamily,
     color: theme.colors.text.secondary,
-    lineHeight: theme.typography.caption.lineHeight,
+    lineHeight: 16,
   },
   optionsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginTop: theme.spacing.xs,
-    gap: theme.spacing.xs,
+    marginTop: 8,
+    gap: 8,
   },
   optionButton: {
     backgroundColor: theme.colors.background,
-    paddingHorizontal: theme.spacing.md,
-    paddingVertical: theme.spacing.xs,
-    borderRadius: theme.roundness,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
     borderWidth: 1,
     borderColor: theme.colors.divider,
   },
@@ -388,19 +388,19 @@ const styles = StyleSheet.create({
     color: theme.colors.text.secondary,
   },
   optionTextSelected: {
-    color: theme.colors.textOnPrimary,
+    color: theme.colors.white,
     fontWeight: 'bold',
   },
   actionsSection: {
-    marginBottom: theme.spacing.xl,
+    marginBottom: 30,
   },
   actionButton: {
     backgroundColor: theme.colors.surface,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: theme.spacing.md,
-    borderRadius: theme.roundness,
-    marginBottom: theme.spacing.md,
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
   },
   dangerButton: {
     borderWidth: 1,
@@ -411,7 +411,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.typography.body1.fontFamily,
     color: theme.colors.text.primary,
     flex: 1,
-    marginLeft: theme.spacing.md,
+    marginLeft: 12,
   },
   dangerText: {
     color: theme.colors.error,
@@ -419,17 +419,17 @@ const styles = StyleSheet.create({
   infoFooter: {
     flexDirection: 'row',
     backgroundColor: theme.colors.info + '20',
-    padding: theme.spacing.md,
-    borderRadius: theme.roundness,
-    marginBottom: theme.spacing.lg,
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 20,
   },
   infoText: {
     fontSize: theme.typography.caption.fontSize,
     fontFamily: theme.typography.caption.fontFamily,
     color: theme.colors.text.secondary,
     flex: 1,
-    marginLeft: theme.spacing.xs,
-    lineHeight: theme.typography.caption.lineHeight,
+    marginLeft: 8,
+    lineHeight: 18,
   },
 });
 

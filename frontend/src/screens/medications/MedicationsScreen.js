@@ -678,7 +678,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   filterButton: {
     backgroundColor: theme.colors.surface,
-    borderRadius: theme.roundness,
+    borderRadius: theme.borderRadius.button,
     paddingHorizontal: theme.spacing.lg,
     paddingVertical: theme.spacing.md,
     borderWidth: 2,
@@ -723,7 +723,7 @@ const createStyles = (theme) => StyleSheet.create({
     flex: 1,
   },
   reminderMedication: {
-    marginBottom: theme.spacing.xxs,
+    marginBottom: 4,
     color: theme.colors.textPrimary,
   },
   reminderTime: {
@@ -755,7 +755,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   medicationIconContainer: {
     backgroundColor: theme.colors.primarySoft,
-    borderRadius: theme.roundness,
+    borderRadius: theme.borderRadius.circle,
     padding: theme.spacing.sm,
     minWidth: 56,
     minHeight: 56,
@@ -770,26 +770,23 @@ const createStyles = (theme) => StyleSheet.create({
     minWidth: 0, // Allows text to wrap properly
   },
   medicationName: {
-    marginBottom: theme.spacing.xxs,
-    fontSize: theme.typography.h6.fontSize,
-    color: theme.colors.textPrimary,
+    marginBottom: 4,
   },
   medicationNameTaken: {
     color: theme.colors.success,
   },
   medicationDosage: {
-    lineHeight: theme.typography.body1.lineHeight,
+    lineHeight: 22,
   },
   statusBadge: {
     alignSelf: 'flex-start',
-    borderRadius: theme.roundness,
+    borderRadius: theme.borderRadius.button,
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
     marginTop: theme.spacing.sm,
   },
   statusText: {
     fontWeight: '600',
-    fontSize: theme.typography.caption.fontSize,
   },
   buttonContainer: {
     minWidth: 100,
@@ -812,13 +809,12 @@ const createStyles = (theme) => StyleSheet.create({
     gap: theme.spacing.xs,
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
-    borderRadius: theme.roundness,
+    borderRadius: theme.borderRadius.button,
     minWidth: 80,
     justifyContent: 'center',
   },
   takenText: {
     fontWeight: '600',
-    fontSize: theme.typography.body1.fontSize,
   },
   nextDoseContainer: {
     flexDirection: 'row',
@@ -828,24 +824,22 @@ const createStyles = (theme) => StyleSheet.create({
   },
   nextDoseText: {
     fontWeight: '500',
-    fontSize: theme.typography.body2.fontSize,
   },
   notesContainer: {
     backgroundColor: theme.colors.surfaceSecondary,
-    borderRadius: theme.roundness,
+    borderRadius: theme.borderRadius.sm,
     padding: theme.spacing.sm,
     marginBottom: theme.spacing.md,
   },
   medicationNotes: {
     fontStyle: 'italic',
-    fontSize: theme.typography.body2.fontSize,
   },
   medicationFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     gap: theme.spacing.md,
-    flexWrap: 'wrap',
+    flexWrap: 'wrap', // Allow wrapping on small screens
   },
   timesContainer: {
     flexDirection: 'row',
@@ -856,10 +850,10 @@ const createStyles = (theme) => StyleSheet.create({
   },
   timeChip: {
     backgroundColor: theme.colors.primarySoft,
-    borderRadius: theme.roundness,
+    borderRadius: theme.borderRadius.button,
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
-    marginBottom: theme.spacing.xs,
+    marginBottom: theme.spacing.xs, // Add margin for wrapping
   },
   timeChipTaken: {
     backgroundColor: theme.colors.successSoft,
@@ -867,7 +861,7 @@ const createStyles = (theme) => StyleSheet.create({
   timeChipText: {
     color: theme.colors.primary,
     fontWeight: '600',
-    fontSize: theme.typography.caption.fontSize,
+    fontSize: 12, // Slightly smaller for better fit
   },
   timeChipTextTaken: {
     color: theme.colors.success,
@@ -875,7 +869,7 @@ const createStyles = (theme) => StyleSheet.create({
   deleteButton: {
     minWidth: 80,
     borderColor: theme.colors.error,
-    alignSelf: 'flex-end',
+    alignSelf: 'flex-end', // Better positioning on wrapped layout
   },
   
   // Empty State

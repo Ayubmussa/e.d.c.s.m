@@ -372,12 +372,7 @@ const MainStackNavigator = () => {
         cardStyle: { backgroundColor: theme.colors.background },
       }}
     >
-      {/* WelcomeScreen as the first screen after login/registration */}
-      <Stack.Screen
-        name="WelcomeScreen"
-        component={require('../screens/auth/WelcomeScreen').default}
-        options={{ headerShown: false }}
-      />
+      {/* Remove WelcomeScreen from MainStackNavigator */}
       <Stack.Screen
         name="MainTabs"
         options={{ 

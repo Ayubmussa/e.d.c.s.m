@@ -597,7 +597,7 @@ const createStyles = (theme) => {
       backgroundColor: theme.colors.background,
     },
     header: {
-      padding: theme.spacing.lg,
+      padding: 16,
       elevation: 2,
       backgroundColor: theme.colors.surface,
     },
@@ -606,19 +606,16 @@ const createStyles = (theme) => {
       alignItems: 'center',
     },
     headerIcon: {
-      marginRight: theme.spacing.md,
+      marginRight: 12,
     },
     headerText: {
       flex: 1,
     },
     headerTitle: {
       fontWeight: 'bold',
-      fontSize: theme.typography.h6.fontSize,
-      color: theme.colors.text.primary,
     },
     headerSubtitle: {
       color: theme.colors.text.secondary,
-      fontSize: theme.typography.body2.fontSize,
     },
     conversationContainer: {
       flex: 1,
@@ -655,22 +652,21 @@ const createStyles = (theme) => {
       color: theme.colors.text.primary,
     },
     userText: {
-      color: theme.colors.textOnPrimary,
+      color: theme.colors.buttonText,
     },
     assistantText: {
       color: theme.colors.text.primary,
     },
     timestampText: {
-      marginTop: theme.spacing.xxs,
+      marginTop: 4,
       opacity: 0.7,
-      color: theme.colors.textSecondary,
-      fontSize: theme.typography.caption.fontSize,
+      color: theme.colors.onSurface,
     },
     userTimestamp: {
-      color: theme.colors.textOnPrimary,
+      color: theme.colors.onPrimary,
     },
     assistantTimestamp: {
-      color: theme.colors.textSecondary,
+      color: theme.colors.onSurface,
     },
     processingContainer: {
       alignSelf: 'flex-start',
@@ -684,7 +680,6 @@ const createStyles = (theme) => {
     },
     processingText: {
       fontStyle: 'italic',
-      color: theme.colors.text.secondary,
     },
     quickCommandsContainer: {
       padding: theme.spacing.lg,
@@ -693,8 +688,6 @@ const createStyles = (theme) => {
     quickCommandsTitle: {
       fontWeight: 'bold',
       marginBottom: theme.spacing.md,
-      fontSize: theme.typography.h6.fontSize,
-      color: theme.colors.text.primary,
     },
     quickCommandsList: {
       flexDirection: 'row',
@@ -708,12 +701,9 @@ const createStyles = (theme) => {
       paddingVertical: theme.spacing.sm,
       paddingHorizontal: theme.spacing.md,
       borderColor: theme.colors.primary,
-      backgroundColor: theme.colors.surface,
     },
     quickCommandText: {
       marginLeft: theme.spacing.sm,
-      fontSize: theme.typography.body2.fontSize,
-      color: theme.colors.primary,
     },
     voiceControlContainer: {
       alignItems: 'center',
@@ -743,19 +733,15 @@ const createStyles = (theme) => {
     voiceButtonLabel: {
       marginTop: theme.spacing.sm,
       textAlign: 'center',
-      color: theme.colors.text.secondary,
-      fontSize: theme.typography.body1.fontSize,
+      color: theme.colors.onSurface,
     },
     helpCard: {
       marginHorizontal: theme.spacing.lg,
       marginBottom: theme.spacing.lg,
-      backgroundColor: theme.colors.surface,
-      borderRadius: theme.roundness,
     },
     helpText: {
       textAlign: 'center',
-      color: theme.colors.text.secondary,
-      fontSize: theme.typography.body2.fontSize,
+      color: theme.colors.onSurface,
     },
   });
 };

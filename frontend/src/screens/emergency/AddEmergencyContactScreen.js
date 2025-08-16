@@ -182,7 +182,7 @@ const AddEmergencyContactScreen = ({ navigation }) => {
           <MaterialCommunityIcons 
             name="content-save" 
             size={20} 
-            color={theme.colors.textOnPrimary} 
+            color={theme.colors.white} 
           />
           <Text style={styles.saveButtonText}>Save Contact</Text>
         </TouchableOpacity>
@@ -308,15 +308,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: theme.spacing.md,
-    borderRadius: theme.roundness,
+    paddingVertical: 16,
+    borderRadius: 8,
   },
   saveButtonText: {
-    color: theme.colors.textOnPrimary,
+    color: theme.colors.white,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: theme.spacing.sm,
+    marginLeft: 8,
   },
 });
 

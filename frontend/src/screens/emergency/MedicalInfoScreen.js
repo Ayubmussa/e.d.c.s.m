@@ -275,7 +275,7 @@ const MedicalInfoScreen = ({ navigation }) => {
             <MaterialCommunityIcons 
               name="content-save" 
               size={20} 
-              color={theme.colors.textOnPrimary} 
+              color={theme.colors.white} 
             />
             <Text style={styles.saveButtonText}>Save</Text>
           </TouchableOpacity>
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: theme.colors.error + '20',
     padding: 16,
-    borderRadius: theme.roundness,
+    borderRadius: 8,
     marginBottom: 20,
     alignItems: 'center',
   },
@@ -485,11 +485,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   saveButtonText: {
-    color: theme.colors.textOnPrimary,
+    color: theme.colors.white,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: theme.spacing.sm,
+    marginLeft: 8,
   },
 });
 

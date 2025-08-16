@@ -446,13 +446,13 @@ const createStyles = (theme) => StyleSheet.create({
     opacity: 0.7,
   },
   memberStatusBadge: {
-    backgroundColor: theme.colors.success,
+    backgroundColor: '#4CAF50',
     borderRadius: theme.spacing.sm,
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
   },
   memberStatusText: {
-    color: theme.colors.textOnPrimary,
+    color: '#FFFFFF',
     fontWeight: '600',
     fontSize: 12,
   },

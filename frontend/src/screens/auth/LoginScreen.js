@@ -37,12 +37,12 @@ const LoginScreen = ({ navigation }) => {
     if (!result.success) {
       Alert.alert('Login Failed', result.error);
     } else {
-      // Navigate to WelcomeScreen after successful login
+      // Navigate directly to MainTabs after successful login
       const userType = result?.user?.userType || result?.user?.user_type || 'elderly';
       navigation.reset({
         index: 0,
         routes: [
-          { name: 'WelcomeScreen', params: { userType, fromRegistration: true } }
+          { name: 'MainTabs', params: { userType } }
         ]
       });
     }
@@ -218,43 +218,43 @@ const createStyles = (theme) => StyleSheet.create({
     marginBottom: theme.spacing.lg,
   },
   label: {
-    color: theme.colors.textOnPrimary,
+    color: '#ffffff',
     fontWeight: 'bold',
-    fontSize: theme.typography.bodyLarge.fontSize,
+    fontSize: 18, // increased from 16
     alignSelf: 'flex-start',
-    marginLeft: theme.spacing.sm,
+    marginLeft: 8,
     marginBottom: theme.spacing.sm,
   },
-  inputWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: theme.colors.surface,
-    borderRadius: theme.roundness,
-    paddingHorizontal: theme.spacing.lg,
-    paddingVertical: theme.spacing.md,
-    minHeight: 64,
-    shadowColor: theme.colors.shadow,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    elevation: 2,
-    width: 440,
-    maxWidth: 500,
-    alignSelf: 'center',
-  },
+ inputWrapper: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#ffffff',
+      borderRadius: 24,
+      paddingHorizontal: theme.spacing.l,
+      paddingVertical: 15,
+      minHeight: 64,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.08,
+      shadowRadius: 8,
+      elevation: 2,
+      width: 440,
+      maxWidth: 500,
+      alignSelf: 'center',
+    },
   inputIcon: {
     marginRight: theme.spacing.sm,
   },
-  input: {
-    flex: 1,
-    fontSize: theme.typography.bodyLarge.fontSize,
-    color: theme.colors.text.primary,
-    paddingVertical: theme.spacing.lg,
-    paddingHorizontal: theme.spacing.lg,
-    minHeight: 32,
-    textAlignVertical: 'center',
-    width: '100%',
-  },
+ input: {
+      flex: 1,
+      fontSize: 20,
+      color: theme.colors.text.primary,
+      paddingVertical: theme.spacing.l,
+      paddingHorizontal: theme.spacing.l,
+      minHeight: 32,
+      textAlignVertical: 'center',
+      width: '100%',
+    },
   passwordInput: {
     paddingRight: theme.spacing.sm, // space for toggle button
   },
@@ -264,20 +264,20 @@ const createStyles = (theme) => StyleSheet.create({
   },
   signInButton: {
     width: '100%',
-    borderRadius: theme.roundness,
+    borderRadius: 24,
     marginTop: theme.spacing.xl,
-    backgroundColor: theme.colors.primary,
+    backgroundColor: '#3BA4F9',
     elevation: 3,
-    shadowColor: theme.colors.primary,
+    shadowColor: '#3BA4F9',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.15,
     shadowRadius: 10,
-    minHeight: 44,
-    paddingHorizontal: theme.spacing.sm,
-    paddingVertical: theme.spacing.sm,
-    width: 310,
-    maxWidth: 200,
-    alignSelf: 'center',
+    minHeight: 44, // increased height to match input fields
+    paddingHorizontal: theme.spacing.s,
+    paddingVertical: theme.spacing.s,
+     width: 310,
+      maxWidth: 200,
+      alignSelf: 'center',
   },
   forgotPasswordButton: {
     marginTop: theme.spacing.lg,
@@ -285,9 +285,9 @@ const createStyles = (theme) => StyleSheet.create({
     paddingHorizontal: theme.spacing.md,
   },
   forgotPasswordText: {
-    color: theme.colors.primary,
+    color: '#3BA4F9',
     fontWeight: 'bold',
-    fontSize: theme.typography.bodyLarge.fontSize,
+    fontSize: 18, // increased from 15
     textDecorationLine: 'underline',
     textAlign: 'center',
   },
@@ -299,13 +299,13 @@ const createStyles = (theme) => StyleSheet.create({
     paddingVertical: theme.spacing.sm,
   },
   signUpPromptText: {
-    color: theme.colors.textOnPrimary,
-    fontSize: theme.typography.bodyMedium.fontSize,
+    color: '#ffffff',
+    fontSize: 16, // increased from 14
   },
   signUpPromptLink: {
-    color: theme.colors.primary,
+    color: '#3BA4F9',
     fontWeight: 'bold',
-    fontSize: theme.typography.bodyMedium.fontSize,
+    fontSize: 16, // increased from 14
     textDecorationLine: 'underline',
   },
 });

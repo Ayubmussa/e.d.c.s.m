@@ -450,16 +450,9 @@ const styles = StyleSheet.create({
   chip: {
     marginRight: theme.spacing.sm,
     marginBottom: theme.spacing.sm,
-    backgroundColor: theme.colors.surface,
-    borderColor: theme.colors.primary,
-    borderWidth: 1,
   },
   notesInput: {
-    fontSize: theme.typography.body1.fontSize,
-    color: theme.colors.text.primary,
-    backgroundColor: theme.colors.surface,
-    borderRadius: theme.roundness,
-    padding: theme.spacing.md,
+    fontSize: UI_CONFIG.FONT_SIZES.MEDIUM,
   },
   actionButtons: {
     flexDirection: 'row',
@@ -469,13 +462,9 @@ const styles = StyleSheet.create({
   },
   cancelButton: {
     flex: 1,
-    borderColor: theme.colors.primary,
-    borderWidth: 1,
-    backgroundColor: theme.colors.surface,
   },
   saveButton: {
     flex: 1,
-    backgroundColor: theme.colors.primary,
   },
   buttonContent: {
     height: UI_CONFIG.TOUCH_TARGET_SIZE,

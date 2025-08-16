@@ -178,19 +178,19 @@ const WelcomeScreen = ({ navigation, route }) => {
           </ThemedHeading>
           <View style={styles.benefitsGrid}>
             <View style={styles.benefitHighlight}>
-              <MaterialCommunityIcons name="shield-check" size={24} color={theme.colors.success} />
+              <MaterialCommunityIcons name="shield-check" size={24} color="#4CAF50" />
               <ThemedText variant="bodyMedium" style={styles.benefitHighlightText}>
                 Designed specifically for elderly users with large, clear interfaces
               </ThemedText>
             </View>
             <View style={styles.benefitHighlight}>
-              <MaterialCommunityIcons name="heart" size={24} color={theme.colors.error} />
+              <MaterialCommunityIcons name="heart" size={24} color="#E91E63" />
               <ThemedText variant="bodyMedium" style={styles.benefitHighlightText}>
                 Comprehensive health and safety management in one app
               </ThemedText>
             </View>
             <View style={styles.benefitHighlight}>
-              <MaterialCommunityIcons name="account-group" size={24} color={theme.colors.primary} />
+              <MaterialCommunityIcons name="account-group" size={24} color="#007BFF" />
               <ThemedText variant="bodyMedium" style={styles.benefitHighlightText}>
                 Connect with family and caregivers for added peace of mind
               </ThemedText>
@@ -200,7 +200,7 @@ const WelcomeScreen = ({ navigation, route }) => {
 
         {/* Features Section - Vertical List */}
         <View style={styles.featuresSection}>
-          <ThemedHeading level={3} style={[styles.sectionTitle, { color: theme.colors.primary }]}>Comprehensive Care Features</ThemedHeading>
+          <ThemedHeading level={3} style={[styles.sectionTitle, { color: '#007BFF' }]}>Comprehensive Care Features</ThemedHeading>
           <ThemedText variant="bodyMedium" color="secondary" style={styles.sectionSubtitle}>
             Explore each feature in detail below
           </ThemedText>
@@ -218,7 +218,7 @@ const WelcomeScreen = ({ navigation, route }) => {
                   <View style={styles.benefitsList}>
                     {feature.benefits.map((benefit, index) => (
                       <View key={index} style={styles.benefitItem}>
-                        <MaterialCommunityIcons name="check-circle" size={20} color={theme.colors.primary} />
+                        <MaterialCommunityIcons name="check-circle" size={20} color="#007BFF" />
                         <ThemedText variant="bodySmall" style={[styles.benefitText, { color: theme.colors.background }]}> {benefit} </ThemedText>
                       </View>
                     ))}
@@ -325,15 +325,15 @@ const createStyles = (theme) => StyleSheet.create({
     elevation: 8,
   },
   appTitle: {
-    fontSize: theme.typography.h2.fontSize,
-    fontWeight: theme.typography.h2.fontWeight,
+    fontSize: 36,
+    fontWeight: 'bold',
     color: theme.colors.primary,
     textAlign: 'center',
     marginBottom: theme.spacing.sm,
     letterSpacing: 2,
   },
   appSubtitle: {
-    fontSize: theme.typography.h5.fontSize,
+    fontSize: 18,
     color: theme.colors.text.secondary,
     textAlign: 'center',
     marginBottom: theme.spacing.lg,
@@ -421,20 +421,17 @@ const createStyles = (theme) => StyleSheet.create({
   featureTitle: {
     textAlign: 'center',
     marginBottom: theme.spacing.lg,
-    fontSize: theme.typography.h5.fontSize,
-    color: theme.colors.primary,
+    fontSize: 24,
   },
   featureDescription: {
     textAlign: 'center',
     marginBottom: theme.spacing.md,
     lineHeight: 24,
-    color: theme.colors.text.primary,
   },
   featureDetails: {
     textAlign: 'center',
     marginBottom: theme.spacing.lg,
     lineHeight: 22,
-    color: theme.colors.text.secondary,
   },
   benefitsList: {
     width: '100%',
@@ -445,12 +442,11 @@ const createStyles = (theme) => StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
-    backgroundColor: theme.colors.surface,
-    borderRadius: theme.roundness,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderRadius: theme.spacing.sm,
   },
   benefitText: {
     marginLeft: theme.spacing.sm,
-    color: theme.colors.text.primary,
   },
   // CTA Section
   ctaCard: {
@@ -487,7 +483,7 @@ const createStyles = (theme) => StyleSheet.create({
   },
   primaryButton: {
     backgroundColor: theme.colors.primary,
-    borderRadius: theme.roundness,
+    borderRadius: theme.spacing.md,
     minHeight: 56,
     shadowColor: theme.colors.primary,
     shadowOffset: { width: 0, height: 4 },
@@ -507,16 +503,16 @@ const createStyles = (theme) => StyleSheet.create({
     marginTop: theme.spacing.md,
     paddingVertical: theme.spacing.sm,
     paddingHorizontal: theme.spacing.md,
-    backgroundColor: theme.colors.success + '15',
-    borderRadius: theme.roundness,
+    backgroundColor: '#4CAF5015',
+    borderRadius: theme.spacing.sm,
     borderWidth: 1,
-    borderColor: theme.colors.success + '30',
+    borderColor: '#4CAF5030',
   },
   checkIcon: {
     marginRight: theme.spacing.sm,
   },
   welcomeNoteText: {
-    color: theme.colors.success,
+    color: '#4CAF50',
     fontWeight: '500',
   },
   // Footer
@@ -529,11 +525,11 @@ const createStyles = (theme) => StyleSheet.create({
   },
   fab: {
     position: 'absolute',
-    bottom: theme.spacing.xl,
+    bottom: 32,
     alignSelf: 'center',
     backgroundColor: theme.colors.primary,
-    borderRadius: theme.roundness,
-    paddingHorizontal: theme.spacing.xl,
+    borderRadius: 32,
+    paddingHorizontal: 24,
     elevation: 6,
     zIndex: 10,
   },

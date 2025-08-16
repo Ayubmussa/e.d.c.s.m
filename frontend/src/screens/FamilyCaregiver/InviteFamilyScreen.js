@@ -210,8 +210,8 @@ const createStyles = (theme) => StyleSheet.create({
     color: theme.colors.text,
   },
   button: {
-    marginTop: theme.spacing.lg,
-    borderRadius: theme.roundness,
+    marginTop: 20,
+    borderRadius: 8,
   },
 });
 
