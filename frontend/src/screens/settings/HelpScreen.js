@@ -167,7 +167,7 @@ const HelpScreen = ({ navigation }) => {
           <MaterialCommunityIcons 
             name="arrow-left" 
             size={24} 
-            color={theme.colors.white} 
+            color={theme.colors.textOnPrimary} 
           />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Help & Support</Text>
@@ -261,7 +261,7 @@ const HelpScreen = ({ navigation }) => {
               <MaterialCommunityIcons 
                 name="email" 
                 size={20} 
-                color={theme.colors.white} 
+                color={theme.colors.textOnPrimary} 
               />
               <Text style={styles.contactButtonText}>Send Message</Text>
             </TouchableOpacity>
@@ -299,36 +299,36 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: theme.colors.primary,
-    paddingTop: 50,
-    paddingBottom: 20,
-    paddingHorizontal: 20,
+    paddingTop: theme.spacing.xxl,
+    paddingBottom: theme.spacing.lg,
+    paddingHorizontal: theme.spacing.lg,
     flexDirection: 'row',
     alignItems: 'center',
   },
   backButton: {
-    marginRight: 15,
+    marginRight: theme.spacing.md,
   },
   headerTitle: {
-    color: theme.colors.white,
+    color: theme.colors.textOnPrimary,
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     fontWeight: 'bold',
   },
   content: {
     flex: 1,
-    padding: 20,
+    padding: theme.spacing.lg,
   },
   welcomeSection: {
     alignItems: 'center',
-    marginBottom: 30,
+    marginBottom: theme.spacing.xl,
   },
   welcomeTitle: {
     fontSize: theme.typography.h5.fontSize,
     fontFamily: theme.typography.h5.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: 'bold',
-    marginTop: 16,
-    marginBottom: 8,
+    marginTop: theme.spacing.lg,
+    marginBottom: theme.spacing.sm,
     textAlign: 'center',
   },
   welcomeText: {
@@ -336,45 +336,45 @@ const styles = StyleSheet.create({
     fontFamily: theme.typography.body1.fontFamily,
     color: theme.colors.text.secondary,
     textAlign: 'center',
-    lineHeight: 20,
+    lineHeight: theme.typography.body1.lineHeight,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: theme.colors.surface,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    marginBottom: 30,
+    borderRadius: theme.roundness,
+    paddingHorizontal: theme.spacing.md,
+    paddingVertical: theme.spacing.sm,
+    marginBottom: theme.spacing.xl,
   },
   searchInput: {
     flex: 1,
     fontSize: theme.typography.body1.fontSize,
     fontFamily: theme.typography.body1.fontFamily,
     color: theme.colors.text.primary,
-    marginLeft: 8,
-    marginRight: 8,
+    marginLeft: theme.spacing.sm,
+    marginRight: theme.spacing.sm,
   },
   section: {
-    marginBottom: 30,
+    marginBottom: theme.spacing.xl,
   },
   sectionTitle: {
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: theme.spacing.md,
   },
   quickActionCard: {
     backgroundColor: theme.colors.surface,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
-    borderRadius: 8,
-    marginBottom: 12,
+    padding: theme.spacing.md,
+    borderRadius: theme.roundness,
+    marginBottom: theme.spacing.md,
   },
   quickActionIcon: {
-    marginRight: 16,
+    marginRight: theme.spacing.lg,
   },
   quickActionContent: {
     flex: 1,
@@ -384,7 +384,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.typography.body1.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: '600',
-    marginBottom: 4,
+    marginBottom: theme.spacing.xxs,
   },
   quickActionDescription: {
     fontSize: theme.typography.caption.fontSize,
@@ -393,14 +393,14 @@ const styles = StyleSheet.create({
   },
   faqItem: {
     backgroundColor: theme.colors.surface,
-    borderRadius: 8,
-    marginBottom: 12,
+    borderRadius: theme.roundness,
+    marginBottom: theme.spacing.md,
     overflow: 'hidden',
   },
   faqHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
+    padding: theme.spacing.md,
   },
   faqQuestion: {
     flex: 1,
@@ -408,11 +408,11 @@ const styles = StyleSheet.create({
     fontFamily: theme.typography.body1.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: '600',
-    marginRight: 12,
+    marginRight: theme.spacing.md,
   },
   faqAnswer: {
-    paddingHorizontal: 16,
-    paddingBottom: 16,
+    paddingHorizontal: theme.spacing.md,
+    paddingBottom: theme.spacing.md,
     borderTopWidth: 1,
     borderTopColor: theme.colors.divider,
   },
@@ -420,20 +420,20 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.body2.fontSize,
     fontFamily: theme.typography.body2.fontFamily,
     color: theme.colors.text.secondary,
-    lineHeight: 20,
-    marginTop: 12,
+    lineHeight: theme.typography.body2.lineHeight,
+    marginTop: theme.spacing.md,
   },
   noResults: {
     alignItems: 'center',
-    padding: 40,
+    padding: theme.spacing.xxl,
   },
   noResultsText: {
     fontSize: theme.typography.body1.fontSize,
     fontFamily: theme.typography.body1.fontFamily,
     color: theme.colors.text.primary,
     textAlign: 'center',
-    marginTop: 16,
-    marginBottom: 8,
+    marginTop: theme.spacing.lg,
+    marginBottom: theme.spacing.md,
   },
   noResultsSubtext: {
     fontSize: theme.typography.caption.fontSize,
@@ -443,16 +443,16 @@ const styles = StyleSheet.create({
   },
   contactSection: {
     backgroundColor: theme.colors.surface,
-    padding: 20,
-    borderRadius: 12,
-    marginBottom: 20,
+    padding: theme.spacing.lg,
+    borderRadius: theme.roundness,
+    marginBottom: theme.spacing.lg,
   },
   contactTitle: {
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     color: theme.colors.text.primary,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
     textAlign: 'center',
   },
   contactText: {
@@ -460,27 +460,27 @@ const styles = StyleSheet.create({
     fontFamily: theme.typography.body2.fontFamily,
     color: theme.colors.text.secondary,
     textAlign: 'center',
-    marginBottom: 20,
-    lineHeight: 20,
+    marginBottom: theme.spacing.lg,
+    lineHeight: theme.typography.body2.lineHeight,
   },
   contactButtons: {
-    gap: 12,
-    marginBottom: 16,
+    gap: theme.spacing.md,
+    marginBottom: theme.spacing.md,
   },
   contactButton: {
     backgroundColor: theme.colors.primary,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    borderRadius: 8,
+    paddingVertical: theme.spacing.md,
+    borderRadius: theme.roundness,
   },
   contactButtonText: {
-    color: theme.colors.white,
+    color: theme.colors.textOnPrimary,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: 8,
+    marginLeft: theme.spacing.sm,
   },
   contactButtonSecondary: {
     backgroundColor: 'transparent',
@@ -489,15 +489,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    borderRadius: 8,
+    paddingVertical: theme.spacing.md,
+    borderRadius: theme.roundness,
   },
   contactButtonSecondaryText: {
     color: theme.colors.primary,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: 8,
+    marginLeft: theme.spacing.sm,
   },
   supportHours: {
     flexDirection: 'row',
@@ -508,7 +508,7 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.caption.fontSize,
     fontFamily: theme.typography.caption.fontFamily,
     color: theme.colors.text.secondary,
-    marginLeft: 4,
+    marginLeft: theme.spacing.xs,
   },
 });
 

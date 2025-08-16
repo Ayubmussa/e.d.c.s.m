@@ -94,11 +94,11 @@ const HealthHistoryScreen = (props) => {
   const getMoodColor = (moodRating) => {
     // Convert numeric mood rating to color
     const moodColors = {
-      1: '#F44336',   // Very sad - Red
-      2: '#FF9800',   // Sad - Orange
-      3: '#FFC107',   // Neutral - Yellow
-      4: '#8BC34A',   // Happy - Light Green
-      5: '#4CAF50'    // Very happy - Green
+      1: theme.colors.error,   // Very sad - Red
+      2: theme.colors.warning,   // Sad - Orange
+      3: theme.colors.info,   // Neutral - Yellow
+      4: theme.colors.success,   // Happy - Light Green
+      5: theme.colors.success // Very happy - Green
     };
     return moodColors[moodRating] || theme.colors.primary;
   };
@@ -128,11 +128,11 @@ const HealthHistoryScreen = (props) => {
   };
 
   const getScoreColor = (score) => {
-    if (score >= 80) return '#4CAF50';
-    if (score >= 60) return '#8BC34A';
-    if (score >= 40) return '#FFC107';
-    if (score >= 20) return '#FF9800';
-    return '#F44336';
+    if (score >= 80) return theme.colors.success;
+    if (score >= 60) return theme.colors.info;
+    if (score >= 40) return theme.colors.warning;
+    if (score >= 20) return theme.colors.error;
+    return theme.colors.error;
   };
 
   const FilterButton = ({ filterKey, label, count }) => {
@@ -441,13 +441,13 @@ const createStyles = (theme) => StyleSheet.create({
     borderColor: theme.colors.primary,
   },
   filterButtonText: {
-    color: '#000000', // Changed to black for testing
+    color: theme.colors.text.primary,
     fontWeight: '600',
-    fontSize: 18, // Made larger for debugging
+    fontSize: theme.typography.bodyLarge.fontSize,
   },
   filterButtonTextActive: {
-    color: '#FFFFFF', // Changed to white for testing
-    fontSize: 18, // Made larger for debugging
+    color: theme.colors.textOnPrimary,
+    fontSize: theme.typography.bodyLarge.fontSize,
   },
   filterButtonCount: {
     fontSize: 12,

@@ -25,7 +25,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 
 // Assets
-const BG_IMAGE = require('../../../assets/registration.png');
+const BG_IMAGE = require('../../../assets/aa.png');
 
 const RegisterScreen = ({ navigation }) => {
   const { theme } = useTheme();
@@ -776,22 +776,22 @@ const createStyles = (theme) => {
       marginBottom: theme.spacing.lg,
     },
     label: {
-      color: '#ffffff',
+      color: theme.colors.textOnPrimary,
       fontWeight: 'bold',
-      fontSize: 18,
+      fontSize: theme.typography.bodyLarge.fontSize,
       alignSelf: 'flex-start',
-      marginLeft: 8,
+      marginLeft: theme.spacing.sm,
       marginBottom: theme.spacing.sm,
     },
     inputWrapper: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: '#ffffff',
-      borderRadius: 24,
-      paddingHorizontal: theme.spacing.l,
-      paddingVertical: 6,
+      backgroundColor: theme.colors.surface,
+      borderRadius: theme.roundness,
+      paddingHorizontal: theme.spacing.lg,
+      paddingVertical: theme.spacing.md,
       minHeight: 54,
-      shadowColor: '#000',
+      shadowColor: theme.colors.shadow,
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.08,
       shadowRadius: 8,
@@ -803,10 +803,10 @@ const createStyles = (theme) => {
     },
     input: {
       flex: 1,
-      fontSize: 18,
+      fontSize: theme.typography.bodyLarge.fontSize,
       color: theme.colors.text.primary,
       paddingVertical: theme.spacing.md,
-      paddingHorizontal: theme.spacing.ms,
+      paddingHorizontal: theme.spacing.md,
       minHeight: 22,
       textAlignVertical: 'center',
       width: '100%',
@@ -844,7 +844,7 @@ const createStyles = (theme) => {
       minWidth: 120,
     },
     userTypeOptionSelected: {
-      backgroundColor: '#3BA4F9',
+      backgroundColor: theme.colors.primary,
     },
     userTypeText: {
       marginLeft: theme.spacing.sm,
@@ -854,14 +854,14 @@ const createStyles = (theme) => {
       flex: 1,
     },
     userTypeTextSelected: {
-      color: '#ffffff',
+      color: theme.colors.textOnPrimary,
     },
     actionButton: {
       width: '100%',
-      borderRadius: 24,
-      backgroundColor: '#3BA4F9',
+      borderRadius: theme.roundness,
+      backgroundColor: theme.colors.primary,
       elevation: 3,
-      shadowColor: '#3BA4F9',
+      shadowColor: theme.colors.primary,
       shadowOffset: { width: 0, height: 3 },
       shadowOpacity: 0.15,
       shadowRadius: 10,
@@ -904,13 +904,13 @@ const createStyles = (theme) => {
       paddingVertical: theme.spacing.sm,
     },
     signInPromptText: {
-      color: '#ffffff',
-      fontSize: 16,
+      color: theme.colors.textOnPrimary,
+      fontSize: theme.typography.bodyMedium.fontSize,
     },
     signInPromptLink: {
-      color: '#3BA4F9',
+      color: theme.colors.primary,
       fontWeight: 'bold',
-      fontSize: 16,
+      fontSize: theme.typography.bodyMedium.fontSize,
       textDecorationLine: 'underline',
     },
     phoneInputWrapper: {

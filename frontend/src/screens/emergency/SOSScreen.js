@@ -448,22 +448,22 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   sosButtonActive: {
-    backgroundColor: '#d32f2f',
+    backgroundColor: theme.colors.errorDark,
     transform: [{ scale: 0.95 }],
   },
   sosButtonCountdown: {
-    backgroundColor: '#ff5722',
+    backgroundColor: theme.colors.warning,
   },
   sosButtonText: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: 'white',
+    color: theme.colors.textOnPrimary,
     marginTop: 8,
   },
   sosCountdownText: {
     fontSize: 48,
     fontWeight: 'bold',
-    color: 'white',
+    color: theme.colors.textOnPrimary,
     position: 'absolute',
   },
   sosInstructions: {

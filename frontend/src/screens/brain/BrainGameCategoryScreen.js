@@ -128,7 +128,7 @@ const BrainGameCategoryScreen = ({ navigation, route }) => {
           <MaterialCommunityIcons 
             name="arrow-left" 
             size={24} 
-            color={theme.colors.white} 
+            color={theme.colors.textOnPrimary} 
           />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{category.name}</Text>
@@ -207,7 +207,7 @@ const BrainGameCategoryScreen = ({ navigation, route }) => {
             <MaterialCommunityIcons 
               name="play" 
               size={20} 
-              color={theme.colors.white} 
+              color={theme.colors.textOnPrimary} 
             />
             <Text style={styles.playGameText}>Start Game</Text>
           </TouchableOpacity>
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   headerTitle: {
-    color: theme.colors.white,
+    color: theme.colors.textOnPrimary,
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     fontWeight: 'bold',
@@ -410,16 +410,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 16,
-    borderRadius: 8,
-    marginTop: 20,
+    paddingVertical: theme.spacing.md,
+    borderRadius: theme.roundness,
+    marginTop: theme.spacing.lg,
   },
   playGameText: {
-    color: theme.colors.white,
+    color: theme.colors.textOnPrimary,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: 8,
+    marginLeft: theme.spacing.sm,
   },
 });
 

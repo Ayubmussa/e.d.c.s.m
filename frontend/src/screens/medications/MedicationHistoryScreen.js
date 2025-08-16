@@ -512,7 +512,7 @@ const createStyles = (theme) => ({
   },
   exportButton: {
     padding: theme.spacing.sm,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
     backgroundColor: theme.colors.surfaceSecondary,
   },
 
@@ -529,7 +529,7 @@ const createStyles = (theme) => ({
   },
   medicationIconContainer: {
     backgroundColor: theme.colors.primarySoft,
-    borderRadius: theme.borderRadius.circle,
+    borderRadius: theme.roundness,
     padding: theme.spacing.md,
     minWidth: 64,
     minHeight: 64,
@@ -540,12 +540,16 @@ const createStyles = (theme) => ({
     flex: 1,
   },
   medicationName: {
-    marginBottom: 4,
+    marginBottom: theme.spacing.xxs,
+    fontSize: theme.typography.h6.fontSize,
+    color: theme.colors.text.primary,
   },
 
   // Stats Card
   statsCard: {
     marginBottom: theme.spacing.lg,
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.roundness,
   },
   cardHeader: {
     flexDirection: 'row',
@@ -555,7 +559,8 @@ const createStyles = (theme) => ({
   },
   cardTitle: {
     marginBottom: 0,
-    flex: 1,
+    fontSize: theme.typography.h6.fontSize,
+    color: theme.colors.text.primary,
   },
   statsGrid: {
     flexDirection: 'row',
@@ -568,17 +573,20 @@ const createStyles = (theme) => ({
   statNumber: {
     fontWeight: 'bold',
     marginBottom: theme.spacing.xs,
+    fontSize: theme.typography.h5.fontSize,
   },
 
   // Filters Card
   filtersCard: {
     marginBottom: theme.spacing.lg,
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.roundness,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: theme.colors.surfaceSecondary,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
     paddingHorizontal: theme.spacing.md,
     marginBottom: theme.spacing.md,
   },
@@ -588,8 +596,8 @@ const createStyles = (theme) => ({
   searchInput: {
     flex: 1,
     paddingVertical: theme.spacing.md,
-    fontSize: 16,
-    color: theme.colors.textPrimary,
+    fontSize: theme.typography.body1.fontSize,
+    color: theme.colors.text.primary,
   },
   filtersRow: {
     flexDirection: 'row',
@@ -604,11 +612,12 @@ const createStyles = (theme) => ({
     backgroundColor: theme.colors.surfaceSecondary,
     paddingHorizontal: theme.spacing.md,
     paddingVertical: theme.spacing.sm,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
   },
   filterButtonText: {
     color: theme.colors.primary,
     fontWeight: '600',
+    fontSize: theme.typography.body2.fontSize,
   },
   dateRangeButtons: {
     flexDirection: 'row',
@@ -617,7 +626,7 @@ const createStyles = (theme) => ({
   dateRangeButton: {
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
     backgroundColor: theme.colors.surfaceSecondary,
     minWidth: 40,
     alignItems: 'center',
@@ -627,7 +636,8 @@ const createStyles = (theme) => ({
   },
   dateRangeButtonText: {
     fontWeight: '600',
-    color: theme.colors.textSecondary,
+    color: theme.colors.text.secondary,
+    fontSize: theme.typography.body2.fontSize,
   },
   dateRangeButtonTextActive: {
     color: theme.colors.surface,
@@ -636,6 +646,8 @@ const createStyles = (theme) => ({
   // History Card
   historyCard: {
     marginBottom: theme.spacing.lg,
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.roundness,
   },
   emptyState: {
     alignItems: 'center',
@@ -645,11 +657,13 @@ const createStyles = (theme) => ({
   emptyText: {
     textAlign: 'center',
     fontWeight: '600',
+    fontSize: theme.typography.body1.fontSize,
   },
   emptySubtext: {
     textAlign: 'center',
     maxWidth: 280,
-    lineHeight: 22,
+    lineHeight: theme.typography.body2.lineHeight,
+    fontSize: theme.typography.body2.fontSize,
   },
   historyList: {
     gap: theme.spacing.sm,
@@ -659,7 +673,7 @@ const createStyles = (theme) => ({
   },
   historyItemBorder: {
     borderBottomWidth: 1,
-    borderBottomColor: theme.colors.borderColor + '40',
+    borderBottomColor: theme.colors.border + '40',
   },
   historyItemHeader: {
     flexDirection: 'row',
@@ -672,6 +686,7 @@ const createStyles = (theme) => ({
   },
   dateText: {
     fontWeight: '600',
+    fontSize: theme.typography.body2.fontSize,
   },
   historyStatus: {
     flexDirection: 'row',
@@ -680,16 +695,18 @@ const createStyles = (theme) => ({
   },
   statusText: {
     fontWeight: '600',
+    fontSize: theme.typography.body2.fontSize,
   },
   historyNotes: {
     marginTop: theme.spacing.sm,
     paddingTop: theme.spacing.sm,
     borderTopWidth: 1,
-    borderTopColor: theme.colors.borderColor + '20',
+    borderTopColor: theme.colors.border + '20',
   },
   notesText: {
     fontStyle: 'italic',
-    lineHeight: 20,
+    lineHeight: theme.typography.body2.lineHeight,
+    fontSize: theme.typography.body2.fontSize,
   },
 });
 

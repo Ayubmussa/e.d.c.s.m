@@ -379,7 +379,7 @@ const QuickBrainGameScreen = ({ navigation }) => {
           <MaterialCommunityIcons 
             name="refresh" 
             size={20} 
-            color={theme.colors.white} 
+            color={theme.colors.textOnPrimary} 
           />
           <Text style={styles.playAgainText}>Play Again</Text>
         </TouchableOpacity>
@@ -407,7 +407,7 @@ const QuickBrainGameScreen = ({ navigation }) => {
           <MaterialCommunityIcons 
             name="arrow-left" 
             size={24} 
-            color={theme.colors.white} 
+            color={theme.colors.textOnPrimary} 
           />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Quick Brain Game</Text>
@@ -427,7 +427,7 @@ const QuickBrainGameScreen = ({ navigation }) => {
             <MaterialCommunityIcons 
               name="flash" 
               size={20} 
-              color={theme.colors.white} 
+              color={theme.colors.textOnPrimary} 
             />
             <Text style={styles.startButtonText}>Start Quick Game</Text>
           </TouchableOpacity>
@@ -454,7 +454,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   headerTitle: {
-    color: theme.colors.white,
+    color: theme.colors.textOnPrimary,
     fontSize: theme.typography.h6.fontSize,
     fontFamily: theme.typography.h6.fontFamily,
     fontWeight: 'bold',
@@ -518,15 +518,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 16,
-    borderRadius: 8,
+    paddingVertical: theme.spacing.md,
+    borderRadius: theme.roundness,
   },
   startButtonText: {
-    color: theme.colors.white,
+    color: theme.colors.textOnPrimary,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: 8,
+    marginLeft: theme.spacing.sm,
   },
   gameArea: {
     flex: 1,
@@ -666,23 +666,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 16,
-    borderRadius: 8,
-    marginBottom: 12,
+    paddingVertical: theme.spacing.md,
+    borderRadius: theme.roundness,
+    marginBottom: theme.spacing.md,
   },
   playAgainText: {
-    color: theme.colors.white,
+    color: theme.colors.textOnPrimary,
     fontSize: theme.typography.button.fontSize,
     fontFamily: theme.typography.button.fontFamily,
     fontWeight: 'bold',
-    marginLeft: 8,
+    marginLeft: theme.spacing.sm,
   },
   backButton: {
     backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 16,
-    borderRadius: 8,
+    paddingVertical: theme.spacing.md,
+    borderRadius: theme.roundness,
     borderWidth: 1,
     borderColor: theme.colors.secondary,
   },

@@ -397,7 +397,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   callType: {
-    fontSize: 18,
+    fontSize: theme.typography.bodyLarge.fontSize,
     fontWeight: '600',
   },
   statusChip: {
@@ -420,19 +420,19 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   contactName: {
-    fontSize: 28,
+    fontSize: theme.typography.h4.fontSize,
     fontWeight: '600',
     textAlign: 'center',
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   contactPhone: {
-    fontSize: 16,
+    fontSize: theme.typography.bodyMedium.fontSize,
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: theme.spacing.md,
   },
   emergencyCard: {
-    marginTop: 20,
-    borderRadius: 12,
+    marginTop: theme.spacing.lg,
+    borderRadius: theme.roundness,
   },
   emergencyInfo: {
     flexDirection: 'row',
@@ -440,8 +440,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   emergencyText: {
-    marginLeft: 8,
-    fontSize: 16,
+    marginLeft: theme.spacing.sm,
+    fontSize: theme.typography.bodyMedium.fontSize,
     fontWeight: '500',
   },
   videoContainer: {
@@ -456,8 +456,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   videoText: {
-    marginTop: 8,
-    fontSize: 16,
+    marginTop: theme.spacing.sm,
+    fontSize: theme.typography.bodyMedium.fontSize,
   },
   controlsContainer: {
     paddingHorizontal: 40,

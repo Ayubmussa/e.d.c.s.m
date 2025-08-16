@@ -428,12 +428,12 @@ const EditProfileScreen = ({ navigation }) => {
         <TouchableOpacity
           style={{
             width: '100%',
-            marginTop: 10,
-            marginBottom: 30,
+            marginTop: theme.spacing.xs,
+            marginBottom: theme.spacing.xl,
             backgroundColor: theme.colors.primary,
-            borderRadius: 24,
+            borderRadius: theme.roundness,
             paddingHorizontal: 0,
-            paddingVertical: 16,
+            paddingVertical: theme.spacing.md,
             alignSelf: 'center',
           }}
           onPress={handleSave}
@@ -442,11 +442,11 @@ const EditProfileScreen = ({ navigation }) => {
           <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
             <MaterialCommunityIcons 
               name="content-save" 
-              size={24} 
-              color={theme.colors.white} 
-              style={{ marginRight: 8 }}
+              size={theme.typography.h6.fontSize}
+              color={theme.colors.textOnPrimary} 
+              style={{ marginRight: theme.spacing.sm }}
             />
-            <Text style={{color: theme.colors.white, fontWeight: 'bold', fontSize: 18, textAlign: 'center'}}>Save</Text>
+            <Text style={{color: theme.colors.textOnPrimary, fontWeight: 'bold', fontSize: theme.typography.h6.fontSize, textAlign: 'center'}}>Save</Text>
           </View>
         </TouchableOpacity>
       </ScrollView>
@@ -464,9 +464,9 @@ function createStyles(theme) {
     },
     header: {
       backgroundColor: theme.colors.primary,
-      paddingTop: 50,
-      paddingBottom: 20,
-      paddingHorizontal: 20,
+      paddingTop: theme.spacing.xxl,
+      paddingBottom: theme.spacing.lg,
+      paddingHorizontal: theme.spacing.lg,
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -476,7 +476,7 @@ function createStyles(theme) {
     },
     headerTitle: {
       flex: 2,
-      color: theme.colors.white,
+      color: theme.colors.textOnPrimary,
       fontSize: theme.typography.h6.fontSize,
       fontFamily: theme.typography.h6.fontFamily,
       fontWeight: 'bold',
@@ -488,18 +488,18 @@ function createStyles(theme) {
     },
     content: {
       flex: 1,
-      padding: 20,
+      padding: theme.spacing.lg,
     },
     profilePictureSection: {
       alignItems: 'center',
-      marginBottom: 16,
-      padding: 12,
-      borderRadius: 16,
+      marginBottom: theme.spacing.md,
+      padding: theme.spacing.sm,
+      borderRadius: theme.roundness,
       backgroundColor: theme.colors.surface,
       elevation: 2,
     },
     profilePicture: {
-      marginBottom: 8,
+      marginBottom: theme.spacing.xs,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -515,24 +515,24 @@ function createStyles(theme) {
       flexDirection: 'row',
       alignItems: 'center',
       backgroundColor: theme.colors.primary,
-      paddingHorizontal: 12,
-      paddingVertical: 6,
-      borderRadius: 20,
-      marginTop: 4,
+      paddingHorizontal: theme.spacing.md,
+      paddingVertical: theme.spacing.xs,
+      borderRadius: theme.roundness,
+      marginTop: theme.spacing.xxs,
     },
     changePictureText: {
-      color: theme.colors.white,
-      marginLeft: 6,
+      color: theme.colors.textOnPrimary,
+      marginLeft: theme.spacing.xs,
       fontWeight: '600',
     },
     section: {
-      marginBottom: 30,
+      marginBottom: theme.spacing.lg,
     },
     card: {
       backgroundColor: theme.colors.surface,
-      borderRadius: 12,
-      padding: 18,
-      marginBottom: 18,
+      borderRadius: theme.roundness,
+      padding: theme.spacing.lg,
+      marginBottom: theme.spacing.lg,
       ...shadows.card,
     },
     sectionTitle: {
@@ -540,46 +540,46 @@ function createStyles(theme) {
       fontFamily: theme.typography.h6.fontFamily,
       color: theme.colors.text.primary,
       fontWeight: 'bold',
-      marginBottom: 16,
+      marginBottom: theme.spacing.md,
     },
     fieldContainer: {
       backgroundColor: theme.colors.surface,
-      borderRadius: 8,
-      padding: 16,
-      marginBottom: 12,
+      borderRadius: theme.roundness,
+      padding: theme.spacing.md,
+      marginBottom: theme.spacing.md,
     },
     fieldHeader: {
       flexDirection: 'row',
       alignItems: 'center',
-      marginBottom: 8,
+      marginBottom: theme.spacing.sm,
     },
     fieldLabel: {
       fontSize: theme.typography.body1.fontSize,
       fontFamily: theme.typography.body1.fontFamily,
       color: theme.colors.text.primary,
       fontWeight: '600',
-      marginLeft: 8,
+      marginLeft: theme.spacing.sm,
       flex: 1,
     },
     editButton: {
-      padding: 4,
+      padding: theme.spacing.xs,
     },
     fieldValue: {
       fontSize: theme.typography.body1.fontSize,
       fontFamily: theme.typography.body1.fontFamily,
       color: theme.colors.text.secondary,
-      lineHeight: 20,
+      lineHeight: theme.typography.body1.lineHeight,
     },
     input: {
       borderWidth: 1,
       borderColor: theme.colors.primary,
-      borderRadius: 6,
-      paddingHorizontal: 12,
-      paddingVertical: 8,
+      borderRadius: theme.roundness,
+      paddingHorizontal: theme.spacing.md,
+      paddingVertical: theme.spacing.sm,
       fontSize: theme.typography.body1.fontSize,
       fontFamily: theme.typography.body1.fontFamily,
       color: theme.colors.text.primary,
-      backgroundColor: theme.colors.white,
+      backgroundColor: theme.colors.surface,
     },
     multilineInput: {
       minHeight: 80,
@@ -588,17 +588,17 @@ function createStyles(theme) {
     infoBox: {
       flexDirection: 'row',
       backgroundColor: theme.colors.info + '20',
-      padding: 16,
-      borderRadius: 8,
-      marginBottom: 20,
+      padding: theme.spacing.md,
+      borderRadius: theme.roundness,
+      marginBottom: theme.spacing.lg,
     },
     infoText: {
       fontSize: theme.typography.caption.fontSize,
       fontFamily: theme.typography.caption.fontFamily,
       color: theme.colors.text.secondary,
       flex: 1,
-      marginLeft: 8,
-      lineHeight: 18,
+      marginLeft: theme.spacing.xs,
+      lineHeight: theme.typography.caption.lineHeight,
     },
   });
 }

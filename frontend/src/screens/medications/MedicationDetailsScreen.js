@@ -511,7 +511,7 @@ const createStyles = (theme) => ({
   },
   backButton: {
     padding: theme.spacing.sm,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
     backgroundColor: theme.colors.surfaceSecondary,
   },
   headerTitle: {
@@ -519,7 +519,7 @@ const createStyles = (theme) => ({
     textAlign: 'center',
   },
   headerSpacer: {
-    width: 40, // Adjust as needed for spacing
+    width: theme.spacing.xl, // Use theme spacing for spacer width
   },
   
   // Medication Card (consistent with MedicationsScreen)
@@ -540,7 +540,7 @@ const createStyles = (theme) => ({
   },
   medicationIconContainer: {
     backgroundColor: theme.colors.primarySoft,
-    borderRadius: theme.borderRadius.circle,
+    borderRadius: theme.roundness,
     padding: theme.spacing.sm,
     minWidth: 56,
     minHeight: 56,
@@ -555,23 +555,26 @@ const createStyles = (theme) => ({
     minWidth: 0,
   },
   medicationName: {
-    marginBottom: 4,
+    marginBottom: theme.spacing.xxs,
+    fontSize: theme.typography.h6.fontSize,
+    color: theme.colors.text.primary,
   },
   medicationNameTaken: {
     color: theme.colors.success,
   },
   medicationDosage: {
-    lineHeight: 22,
+    lineHeight: theme.typography.body1.lineHeight,
   },
   statusBadge: {
     alignSelf: 'flex-start',
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
     marginTop: theme.spacing.sm,
   },
   statusText: {
     fontWeight: '600',
+    fontSize: theme.typography.caption.fontSize,
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -579,7 +582,7 @@ const createStyles = (theme) => ({
   },
   actionButton: {
     padding: theme.spacing.sm,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
     backgroundColor: theme.colors.surfaceSecondary,
   },
   
@@ -602,15 +605,18 @@ const createStyles = (theme) => ({
     justifyContent: 'center',
     gap: theme.spacing.xs,
     paddingVertical: theme.spacing.md,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
   },
   takenText: {
     fontWeight: '600',
+    fontSize: theme.typography.body1.fontSize,
   },
   
   // Cards (consistent with app design)
   card: {
     marginBottom: theme.spacing.lg,
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.roundness,
   },
   cardHeader: {
     flexDirection: 'row',
@@ -620,6 +626,8 @@ const createStyles = (theme) => ({
   },
   cardTitle: {
     marginBottom: 0,
+    fontSize: theme.typography.h6.fontSize,
+    color: theme.colors.text.primary,
   },
   
   // Schedule
@@ -642,7 +650,7 @@ const createStyles = (theme) => ({
   },
   timeChip: {
     backgroundColor: theme.colors.primarySoft,
-    borderRadius: theme.borderRadius.button,
+    borderRadius: theme.roundness,
     paddingHorizontal: theme.spacing.sm,
     paddingVertical: theme.spacing.xs,
     marginBottom: theme.spacing.xs,
@@ -653,7 +661,7 @@ const createStyles = (theme) => ({
   timeChipText: {
     color: theme.colors.primary,
     fontWeight: '600',
-    fontSize: 12,
+    fontSize: theme.typography.caption.fontSize,
   },
   timeChipTextTaken: {
     color: theme.colors.success,
@@ -661,11 +669,13 @@ const createStyles = (theme) => ({
   nextDoseText: {
     fontWeight: '600',
     color: theme.colors.primary,
+    fontSize: theme.typography.body1.fontSize,
   },
   
   // Instructions
   instructionsText: {
-    lineHeight: 24,
+    lineHeight: theme.typography.body1.lineHeight,
+    color: theme.colors.text.primary,
   },
   
   // Activity
@@ -680,7 +690,7 @@ const createStyles = (theme) => ({
   },
   activityItemBorder: {
     borderBottomWidth: 1,
-    borderBottomColor: theme.colors.borderColor + '40',
+    borderBottomColor: theme.colors.border + '40',
   },
   activityInfo: {
     flex: 1,
@@ -692,6 +702,7 @@ const createStyles = (theme) => ({
     backgroundColor: theme.colors.error + '05',
   },
   emergencyText: {
-    lineHeight: 22,
+    lineHeight: theme.typography.body1.lineHeight,
+    color: theme.colors.error,
   },
 });

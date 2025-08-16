@@ -436,7 +436,7 @@ const EditSafeZoneScreen = ({ navigation, route }) => {
             name={deleting ? "loading" : "delete"} 
             size={20} 
             color={theme.colors.error} 
-            style={{ marginRight: 8 }}
+            style={{ marginRight: theme.spacing.xs }}
           />
           <Text style={styles.deleteButtonText}>
             {deleting ? 'Deleting...' : 'Delete'}
@@ -459,8 +459,8 @@ const EditSafeZoneScreen = ({ navigation, route }) => {
           <MaterialCommunityIcons 
             name={saving ? "loading" : "content-save"} 
             size={20} 
-            color="white" 
-            style={{ marginRight: 8 }}
+            color={theme.colors.textOnPrimary} 
+            style={{ marginRight: theme.spacing.xs }}
           />
           <Text style={styles.saveButtonText}>
             {saving ? 'Updating...' : 'Update'}
@@ -478,7 +478,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
-    padding: 20,
+    padding: theme.spacing.md,
   },
   loadingContainer: {
     flex: 1,
@@ -487,44 +487,45 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.background,
   },
   loadingText: {
-    marginTop: 16,
-    fontSize: theme.typography.body.fontSize,
+    marginTop: theme.spacing.md,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
   },
   header: {
     alignItems: 'center',
-    marginBottom: 30,
+    marginBottom: theme.spacing.xl,
   },
   title: {
     fontSize: theme.typography.title.fontSize,
     fontWeight: theme.typography.title.fontWeight,
     color: theme.colors.text,
-    marginTop: 12,
-    marginBottom: 8,
+    marginTop: theme.spacing.md,
+    marginBottom: theme.spacing.sm,
   },
   subtitle: {
-    fontSize: theme.typography.body.fontSize,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
     textAlign: 'center',
+    lineHeight: theme.typography.body1.lineHeight,
   },
   form: {
     flex: 1,
   },
   inputGroup: {
-    marginBottom: 20,
+    marginBottom: theme.spacing.lg,
   },
   label: {
     fontSize: theme.typography.subtitle.fontSize,
     fontWeight: theme.typography.subtitle.fontWeight,
     color: theme.colors.text,
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   input: {
     borderWidth: 1,
     borderColor: theme.colors.border,
-    borderRadius: 8,
-    padding: 12,
-    fontSize: theme.typography.body.fontSize,
+    borderRadius: theme.roundness,
+    padding: theme.spacing.md,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.text,
     backgroundColor: theme.colors.surface,
   },
@@ -533,13 +534,13 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
   },
   locationSection: {
-    marginBottom: 20,
+    marginBottom: theme.spacing.lg,
   },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: theme.spacing.md,
   },
   sectionTitle: {
     fontSize: theme.typography.subtitle.fontSize,
@@ -549,20 +550,20 @@ const styles = StyleSheet.create({
   currentLocationButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 8,
+    padding: theme.spacing.sm,
   },
   currentLocationText: {
     fontSize: theme.typography.caption.fontSize,
     color: theme.colors.primary,
-    marginLeft: 4,
+    marginLeft: theme.spacing.xs,
   },
   mapContainer: {
     height: 200,
-    borderRadius: 8,
+    borderRadius: theme.roundness,
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: theme.colors.border,
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   map: {
     flex: 1,
@@ -570,34 +571,34 @@ const styles = StyleSheet.create({
   coordinatesInfo: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 4,
+    paddingHorizontal: theme.spacing.xs,
   },
   coordinatesText: {
     fontSize: theme.typography.caption.fontSize,
     color: theme.colors.textSecondary,
   },
   radiusSection: {
-    marginBottom: 20,
+    marginBottom: theme.spacing.lg,
   },
   slider: {
     width: '100%',
     height: 40,
-    marginVertical: 8,
+    marginVertical: theme.spacing.sm,
   },
   radiusLabels: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 4,
+    paddingHorizontal: theme.spacing.xs,
   },
   radiusLabel: {
     fontSize: theme.typography.caption.fontSize,
     color: theme.colors.textSecondary,
   },
   settingsSection: {
-    marginBottom: 20,
+    marginBottom: theme.spacing.lg,
     backgroundColor: theme.colors.surface,
-    padding: 16,
-    borderRadius: 8,
+    padding: theme.spacing.md,
+    borderRadius: theme.roundness,
     borderWidth: 1,
     borderColor: theme.colors.border,
   },
@@ -605,19 +606,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 12,
+    paddingVertical: theme.spacing.sm,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.border,
   },
   switchInfo: {
     flex: 1,
-    marginRight: 16,
+    marginRight: theme.spacing.md,
   },
   switchLabel: {
-    fontSize: theme.typography.body.fontSize,
+    fontSize: theme.typography.body1.fontSize,
     fontWeight: '500',
     color: theme.colors.text,
-    marginBottom: 2,
+    marginBottom: theme.spacing.xxs,
   },
   switchDescription: {
     fontSize: theme.typography.caption.fontSize,
@@ -626,13 +627,13 @@ const styles = StyleSheet.create({
   actions: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    gap: 12,
-    marginTop: 20,
+    gap: theme.spacing.md,
+    marginTop: theme.spacing.lg,
   },
   button: {
     flex: 1,
-    padding: 16,
-    borderRadius: 8,
+    padding: theme.spacing.md,
+    borderRadius: theme.roundness,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -661,7 +662,7 @@ const styles = StyleSheet.create({
   },
   saveButtonText: {
     fontSize: theme.typography.button.fontSize,
-    color: 'white',
+    color: theme.colors.textOnPrimary,
     fontWeight: 'bold',
   },
 });

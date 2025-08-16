@@ -220,8 +220,8 @@ const createStyles = (theme) => StyleSheet.create({
   },
   sectionTitle: {
     fontWeight: 'bold',
-    fontSize: 18,
-    marginBottom: 6,
+    fontSize: theme?.typography?.h6?.fontSize || 18,
+    marginBottom: theme?.spacing?.sm || 6,
     color: theme?.colors?.primary || '#007AFF',
   },
   infoRow: {

@@ -272,21 +272,21 @@ const EmergencyScreen = (props) => {
     {
       title: 'Call 911',
       icon: 'phone-alert',
-      color: '#F44336',
+      color: theme.colors.error,
       onPress: handleEmergencyCall,
       description: 'Direct call to emergency services'
     },
     {
       title: 'Send SOS',
       icon: 'alert',
-      color: '#FF9800',
+      color: theme.colors.warning,
       onPress: handleSOSAlert,
       description: 'Alert all emergency contacts'
     },
     {
       title: 'Medical Info',
       icon: 'medical-bag',
-      color: '#2196F3',
+      color: theme.colors.info,
       onPress: () => {
         if (!navigation || typeof navigation.navigate !== 'function') {
           Alert.alert('Navigation Error', 'Navigation is not available.');
@@ -299,7 +299,7 @@ const EmergencyScreen = (props) => {
     {
       title: 'Share Location',
       icon: 'map-marker',
-      color: '#4CAF50',
+      color: theme.colors.success,
       onPress: () => {
         if (!navigation || typeof navigation.navigate !== 'function') {
           Alert.alert('Navigation Error', 'Navigation is not available.');
@@ -546,7 +546,7 @@ const EmergencyScreen = (props) => {
             <MaterialCommunityIcons 
               name="map-marker" 
               size={28} 
-              color={currentLocation ? '#4CAF50' : '#FF9800'} 
+              color={currentLocation ? theme.colors.success : theme.colors.warning} 
             />
             <ThemedHeading variant="headlineMedium" style={styles.locationTitle}>
               Location Services
@@ -882,7 +882,7 @@ const createStyles = (theme) => StyleSheet.create({
     minWidth: 200,
     borderRadius: theme.spacing.md,
     paddingVertical: theme.spacing.sm,
-    backgroundColor: '#F44336',
+    backgroundColor: theme.colors.error,
     elevation: 4,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },

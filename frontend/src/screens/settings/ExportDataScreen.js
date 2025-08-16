@@ -442,7 +442,7 @@ const ExportDataScreen = ({ navigation }) => {
                   <MaterialCommunityIcons
                     name={option.icon}
                     size={26}
-                    color={selectedOptions[option.id] ? theme.colors.primary : theme.colors.textSecondary}
+                    color={selectedOptions[option.id] ? theme.colors.textOnPrimary : theme.colors.textSecondary}
                   />
                   <View style={styles.optionInfo}>
                     <Text style={[
@@ -457,7 +457,7 @@ const ExportDataScreen = ({ navigation }) => {
                   <MaterialCommunityIcons
                     name={selectedOptions[option.id] ? "checkbox-marked" : "checkbox-blank-outline"}
                     size={26}
-                    color={selectedOptions[option.id] ? theme.colors.primary : theme.colors.textSecondary}
+                    color={selectedOptions[option.id] ? theme.colors.textOnPrimary : theme.colors.textSecondary}
                   />
                 </View>
               </TouchableOpacity>
@@ -488,7 +488,7 @@ const ExportDataScreen = ({ navigation }) => {
               <MaterialCommunityIcons
                 name="code-json"
                 size={26}
-                color="white"
+                color={theme.colors.textOnPrimary}
               />
               <View style={styles.exportButtonText}>
                 <Text style={styles.exportButtonTitle}>JSON Format</Text>
@@ -505,7 +505,7 @@ const ExportDataScreen = ({ navigation }) => {
               <MaterialCommunityIcons
                 name="file-document"
                 size={26}
-                color='rgba(248, 248, 248, 1)'
+                color={theme.colors.textOnPrimary}
               />
               <View style={styles.exportButtonText}>
                 <Text style={[styles.exportButtonTitle, styles.exportButtonTitleSecondary]}>Text Format</Text>
@@ -577,79 +577,77 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    paddingBottom: 32,
+    paddingBottom: theme.spacing.xxl,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 24,
-    paddingTop: 24,
-    paddingBottom: 16,
+    paddingHorizontal: theme.spacing.xl,
+    paddingTop: theme.spacing.xl,
+    paddingBottom: theme.spacing.lg,
     backgroundColor: theme.colors.background,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.border,
   },
   backButton: {
-    marginRight: 16,
-    padding: 8,
-    borderRadius: 8,
-    backgroundColor: 'rgba(37, 99, 235, 0.08)',
+    marginRight: theme.spacing.lg,
+    padding: theme.spacing.sm,
+    borderRadius: theme.roundness,
+    backgroundColor: theme.colors.primaryLight,
   },
   headerTitle: {
-    fontSize: 22,
-    fontWeight: '700',
+    fontSize: theme.typography.h5.fontSize,
+    fontWeight: theme.typography.h5.fontWeight,
     color: theme.colors.text,
-    marginLeft: 4,
+    marginLeft: theme.spacing.xs,
   },
   section: {
-    paddingHorizontal: 24,
-    paddingVertical: 20,
+    paddingHorizontal: theme.spacing.xl,
+    paddingVertical: theme.spacing.lg,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: '700',
+    fontSize: theme.typography.h6.fontSize,
+    fontWeight: theme.typography.h6.fontWeight,
     color: theme.colors.text,
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   sectionSubtitle: {
-    fontSize: 14,
+    fontSize: theme.typography.body2.fontSize,
     color: theme.colors.textSecondary,
-    marginBottom: 15,
+    marginBottom: theme.spacing.md,
   },
   infoCard: {
     backgroundColor: theme.colors.card,
-    borderRadius: 18,
-    padding: 28,
+    borderRadius: theme.roundness,
+    padding: theme.spacing.xl,
     alignItems: 'center',
-   
   },
   infoTitle: {
-    fontSize: 20,
-    fontWeight: '700',
+    fontSize: theme.typography.h6.fontSize,
+    fontWeight: theme.typography.h6.fontWeight,
     color: theme.colors.text,
-    marginTop: 14,
-    marginBottom: 8,
+    marginTop: theme.spacing.md,
+    marginBottom: theme.spacing.sm,
   },
   infoText: {
-    fontSize: 16,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
     textAlign: 'center',
-    lineHeight: 22,
+    lineHeight: theme.typography.body1.lineHeight,
   },
   optionsContainer: {
-    gap: 12,
+    gap: theme.spacing.md,
   },
   optionCard: {
-    backgroundColor:'rgba(37, 100, 235, 0)',
-    borderRadius: 14,
-    padding: 18,
+    backgroundColor: theme.colors.primaryLight,
+    borderRadius: theme.roundness,
+    padding: theme.spacing.lg,
     borderWidth: 1,
-    borderColor:  'rgba(37, 100, 235, 0)',
-    
+    borderColor: theme.colors.primaryLight,
   },
   optionCardSelected: {
-    borderColor: 'rgba(37, 100, 235, 0)',
-    backgroundColor: 'rgba(37, 100, 235, 0)',
+    borderColor: theme.colors.primary,
+    backgroundColor: theme.colors.primary,
   },
   optionHeader: {
     flexDirection: 'row',
@@ -657,104 +655,91 @@ const styles = StyleSheet.create({
   },
   optionInfo: {
     flex: 1,
-    marginLeft: 14,
-    marginRight: 14,
+    marginLeft: theme.spacing.md,
+    marginRight: theme.spacing.md,
   },
   optionTitle: {
-    fontSize: 16,
-    fontWeight: '700',
+    fontSize: theme.typography.body1.fontSize,
+    fontWeight: theme.typography.body1.fontWeight,
     color: theme.colors.text,
-    marginBottom: 4,
+    marginBottom: theme.spacing.xxs,
   },
   optionTitleSelected: {
-    color: theme.colors.primary,
+    color: theme.colors.textOnPrimary,
   },
   optionDescription: {
-    fontSize: 14,
+    fontSize: theme.typography.caption.fontSize,
     color: theme.colors.textSecondary,
-    marginBottom: 4,
+    marginBottom: theme.spacing.xxs,
   },
   optionSize: {
-    fontSize: 12,
+    fontSize: theme.typography.caption.fontSize,
     color: theme.colors.textSecondary,
     fontStyle: 'italic',
   },
   summaryCard: {
-    backgroundColor:  'rgba(37, 100, 235, 0)',
-    borderRadius: 10,
-    padding: 18,
-    marginTop: 18,
+    backgroundColor: theme.colors.primaryLight,
+    borderRadius: theme.roundness,
+    padding: theme.spacing.lg,
+    marginTop: theme.spacing.lg,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   summaryText: {
-    fontSize: 14,
-    fontWeight: '700',
+    fontSize: theme.typography.body2.fontSize,
+    fontWeight: theme.typography.body2.fontWeight,
     color: theme.colors.primary,
   },
   summarySize: {
-    fontSize: 12,
+    fontSize: theme.typography.caption.fontSize,
     color: theme.colors.primary,
   },
   exportButtonsContainer: {
-    gap: 12,
+    gap: theme.spacing.md,
   },
   exportButton: {
     backgroundColor: theme.colors.primary,
-    borderRadius: 12,
-    padding: 16,
+    borderRadius: theme.roundness,
+    padding: theme.spacing.md,
     flexDirection: 'row',
     alignItems: 'center',
-    
   },
   exportButtonSecondary: {
     backgroundColor: theme.colors.primary,
     borderWidth: 1,
-    color: theme.colors.textSecondary,
     borderColor: theme.colors.primary,
-  },
-  exportButtonTertiary: {
-    backgroundColor:  theme.colors.primary,
-    borderWidth: 1,
-    color: theme.colors.textSecondary,
-    borderColor: theme.colors.primary,
-    color: theme.colors.secondary,
   },
   exportButtonDisabled: {
     opacity: 0.6,
   },
   exportButtonText: {
-    marginLeft: 12,
+    marginLeft: theme.spacing.md,
     flex: 1,
   },
   exportButtonTitle: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: 'white',
+    fontSize: theme.typography.body1.fontSize,
+    fontWeight: theme.typography.body1.fontWeight,
+    color: theme.colors.textOnPrimary,
   },
   exportButtonTitleSecondary: {
-    color: 'rgba(248, 248, 248, 1)',
-  },
-  exportButtonTitleTertiary: {
-    color: 'rgba(248, 248, 248, 1)',
+    color: theme.colors.textOnPrimary,
   },
   exportButtonSubtitle: {
-    fontSize: 12,
-    color: 'rgba(255, 255, 255, 1)',
-    marginTop: 2,
+    fontSize: theme.typography.caption.fontSize,
+    color: theme.colors.textOnPrimary,
+    marginTop: theme.spacing.xxs,
   },
   progressContainer: {
-    marginTop: 20,
-    padding: 18,
+    marginTop: theme.spacing.lg,
+    padding: theme.spacing.lg,
     backgroundColor: theme.colors.card,
-    borderRadius: 10,
-    
+    borderRadius: theme.roundness,
   },
   progressText: {
-    fontSize: 14,
+    fontSize: theme.typography.body2.fontSize,
     color: theme.colors.text,
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
     textAlign: 'center',
   },
   progressBar: {
@@ -762,32 +747,31 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.lightGray,
     borderRadius: 4,
     overflow: 'hidden',
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   progressFill: {
     height: '100%',
     backgroundColor: theme.colors.primary,
   },
   progressPercentage: {
-    fontSize: 12,
+    fontSize: theme.typography.caption.fontSize,
     color: theme.colors.textSecondary,
     textAlign: 'center',
   },
   notesCard: {
     backgroundColor: theme.colors.card,
-    borderRadius: 14,
-    padding: 18,
-   
+    borderRadius: theme.roundness,
+    padding: theme.spacing.lg,
   },
   noteItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 14,
+    marginBottom: theme.spacing.md,
   },
   noteText: {
-    fontSize: 14,
+    fontSize: theme.typography.body2.fontSize,
     color: theme.colors.text,
-    marginLeft: 14,
+    marginLeft: theme.spacing.md,
     flex: 1,
   },
 });

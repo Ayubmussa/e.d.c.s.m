@@ -194,7 +194,7 @@ const DirectEmailScreen = ({ navigation }) => {
             <MaterialCommunityIcons 
               name={isLoading ? "loading" : "send"} 
               size={20} 
-              color="white" 
+              color={theme.colors.textOnPrimary} 
               style={{ marginRight: 8 }}
             />
             <Text style={styles.sendButtonText}>
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
   },
   sendButtonText: {
     fontSize: theme.typography.button.fontSize,
-    color: 'white',
+    color: theme.colors.textOnPrimary,
     fontWeight: 'bold',
   },
 });

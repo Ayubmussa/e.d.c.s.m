@@ -18,18 +18,18 @@ const ThemePreviewScreen = ({ navigation }) => {
     <ScrollView style={[styles.container, { backgroundColor: theme.colors.background }]}> 
       <View style={styles.content}>
         {/* Header */}
-        <WellnessCard style={{ alignItems: 'center', backgroundColor: theme.colors.surface, marginBottom: 16, borderRadius: 12 }}> 
+        <WellnessCard style={{ alignItems: 'center', backgroundColor: theme.colors.surface, marginBottom: theme.spacing.lg, borderRadius: theme.roundness }}> 
           <MaterialCommunityIcons
             name={isDarkMode ? 'weather-night' : 'weather-sunny'}
             size={50}
             color={theme.colors.primary}
           />
-          <ThemedText variant="headlineMedium" color="primary" style={[styles.headerTitle, { marginTop: 12 }]}>Theme Preview</ThemedText>
-          <ThemedText variant="bodyLarge" color="secondary" style={[styles.headerSubtitle, { marginTop: 4 }]}>Current theme: {isDarkMode ? 'Dark Mode' : 'Light Mode'}</ThemedText>
+          <ThemedText variant="headlineMedium" color="primary" style={[styles.headerTitle, { marginTop: theme.spacing.md }]}>Theme Preview</ThemedText>
+          <ThemedText variant="bodyLarge" color="secondary" style={[styles.headerSubtitle, { marginTop: theme.spacing.xs }]}>Current theme: {isDarkMode ? 'Dark Mode' : 'Light Mode'}</ThemedText>
         </WellnessCard>
 
         {/* Theme Toggle Card */}
-        <QuickActionCard style={{ marginBottom: 16, borderRadius: 12 }}>
+        <QuickActionCard style={{ marginBottom: theme.spacing.lg, borderRadius: theme.roundness }}>
           <View style={styles.toggleRow}>
             <View style={styles.toggleInfo}>
               <ThemedText variant="titleMedium" color="primary" style={{ fontWeight: 'bold' }}>Dark Mode</ThemedText>
@@ -40,8 +40,8 @@ const ThemePreviewScreen = ({ navigation }) => {
         </QuickActionCard>
 
         {/* Color Palette Preview */}
-        <WellnessCard style={{ marginBottom: 16, borderRadius: 12 }}>
-          <ThemedText variant="titleMedium" color="primary" style={{ fontWeight: 'bold', marginBottom: 8 }}>Color Palette</ThemedText>
+        <WellnessCard style={{ marginBottom: theme.spacing.lg, borderRadius: theme.roundness }}>
+          <ThemedText variant="titleMedium" color="primary" style={{ fontWeight: 'bold', marginBottom: theme.spacing.sm }}>Color Palette</ThemedText>
           <View style={styles.colorGrid}>
             <View style={styles.colorRow}>
               <View style={[styles.colorSwatch, { backgroundColor: theme.colors.primary }]}>
@@ -71,17 +71,17 @@ const ThemePreviewScreen = ({ navigation }) => {
         </WellnessCard>
 
         {/* UI Elements Preview */}
-        <QuickActionCard style={{ marginBottom: 16, borderRadius: 12 }}>
-          <ThemedText variant="titleMedium" color="primary" style={{ fontWeight: 'bold', marginBottom: 8 }}>UI Elements</ThemedText>
+        <QuickActionCard style={{ marginBottom: theme.spacing.lg, borderRadius: theme.roundness }}>
+          <ThemedText variant="titleMedium" color="primary" style={{ fontWeight: 'bold', marginBottom: theme.spacing.sm }}>UI Elements</ThemedText>
           <View style={styles.uiElements}>
             <CustomButton mode="contained" style={styles.button}>Primary Button</CustomButton>
             <CustomButton mode="outlined" style={styles.button}>Outlined Button</CustomButton>
             <CustomButton mode="text" style={styles.button}>Text Button</CustomButton>
             <View style={styles.chipContainer}>
-              <View style={[styles.chip, { backgroundColor: theme.colors.primary + '20', borderColor: theme.colors.primary, borderWidth: 1, borderRadius: 16, paddingHorizontal: 12, paddingVertical: 4, marginRight: 8 }]}> 
+              <View style={[styles.chip, { backgroundColor: theme.colors.primary + '20', borderColor: theme.colors.primary, borderWidth: 1, borderRadius: theme.roundness, paddingHorizontal: theme.spacing.sm, paddingVertical: theme.spacing.xs, marginRight: theme.spacing.sm }]}> 
                 <ThemedText variant="bodySmall" color="primary">Selected Chip</ThemedText>
               </View>
-              <View style={[styles.chip, { backgroundColor: 'transparent', borderColor: theme.dark ? '#fff' : '#222', borderWidth: 1, borderRadius: 16, paddingHorizontal: 12, paddingVertical: 4 }]}> 
+              <View style={[styles.chip, { backgroundColor: 'transparent', borderColor: theme.dark ? '#fff' : '#222', borderWidth: 1, borderRadius: theme.roundness, paddingHorizontal: theme.spacing.sm, paddingVertical: theme.spacing.xs }]}> 
                 <ThemedText variant="bodySmall" color="secondary">Outlined Chip</ThemedText>
               </View>
             </View>
@@ -89,9 +89,9 @@ const ThemePreviewScreen = ({ navigation }) => {
         </QuickActionCard>
 
         {/* Typography Preview */}
-        <WellnessCard style={{ marginBottom: 16, borderRadius: 12 }}>
-          <ThemedText variant="headlineSmall" color="primary" style={{ fontWeight: 'bold', marginBottom: 8 }}>Main Title (Large)</ThemedText>
-          <ThemedText variant="bodyLarge" color="primary" style={{ marginBottom: 8 }}>Primary paragraph text with normal weight and good readability for elderly users.</ThemedText>
+        <WellnessCard style={{ marginBottom: theme.spacing.lg, borderRadius: theme.roundness }}>
+          <ThemedText variant="headlineSmall" color="primary" style={{ fontWeight: 'bold', marginBottom: theme.spacing.sm }}>Main Title (Large)</ThemedText>
+          <ThemedText variant="bodyLarge" color="primary" style={{ marginBottom: theme.spacing.sm }}>Primary paragraph text with normal weight and good readability for elderly users.</ThemedText>
           <ThemedText variant="bodyMedium" color="secondary">Secondary text with lighter color and smaller size for less important information.</ThemedText>
         </WellnessCard>
 
@@ -115,25 +115,25 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
-    padding: 16,
+    padding: theme.spacing.lg,
   },
   header: {
-    padding: 24,
-    borderRadius: 12,
-    marginBottom: 16,
+    padding: theme.spacing.xl,
+    borderRadius: theme.roundness,
+    marginBottom: theme.spacing.lg,
     alignItems: 'center',
   },
   headerTitle: {
-    marginTop: 12,
+    marginTop: theme.spacing.md,
     textAlign: 'center',
   },
   headerSubtitle: {
     textAlign: 'center',
-    marginTop: 4,
+    marginTop: theme.spacing.xs,
   },
   card: {
-    marginBottom: 16,
-    borderRadius: 12,
+    marginBottom: theme.spacing.lg,
+    borderRadius: theme.roundness,
   },
   toggleRow: {
     flexDirection: 'row',
@@ -142,47 +142,47 @@ const styles = StyleSheet.create({
   },
   toggleInfo: {
     flex: 1,
-    marginRight: 16,
+    marginRight: theme.spacing.md,
   },
   colorGrid: {
-    gap: 8,
+    gap: theme.spacing.sm,
   },
   colorRow: {
     flexDirection: 'row',
-    gap: 8,
+    gap: theme.spacing.sm,
   },
   colorSwatch: {
     flex: 1,
     height: 60,
-    borderRadius: 8,
+    borderRadius: theme.roundness,
     justifyContent: 'center',
     alignItems: 'center',
   },
   colorLabel: {
-    color: 'white',
+    color: theme.colors.textOnPrimary,
     fontWeight: '500',
-    fontSize: 12,
+    fontSize: theme.typography.caption.fontSize,
   },
   uiElements: {
-    gap: 12,
+    gap: theme.spacing.md,
   },
   button: {
-    borderRadius: 8,
+    borderRadius: theme.roundness,
   },
   chipContainer: {
     flexDirection: 'row',
-    gap: 8,
-    marginTop: 8,
+    gap: theme.spacing.sm,
+    marginTop: theme.spacing.sm,
   },
   chip: {
-    marginRight: 8,
+    marginRight: theme.spacing.sm,
   },
   typeExample: {
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   backButton: {
-    marginTop: 16,
-    borderRadius: 8,
+    marginTop: theme.spacing.md,
+    borderRadius: theme.roundness,
   },
   buttonContent: {
     height: 48,

@@ -267,9 +267,9 @@ const SafeZonesScreen = ({ navigation }) => {
               </MapView> */}
             </View>
             {/* Current Location Section with Map */}
-            <View style={{ padding: 16, backgroundColor: theme.colors.surface, borderBottomWidth: 1, borderBottomColor: theme.colors.border }}>
-              <Text style={{ fontWeight: 'bold', fontSize: 16, color: theme.colors.text, marginBottom: 8 }}>Current Location</Text>
-              <View style={{ height: 180, borderRadius: 8, overflow: 'hidden', borderWidth: 1, borderColor: theme.colors.border }}>
+            <View style={{ padding: theme.spacing.lg, backgroundColor: theme.colors.surface, borderBottomWidth: 1, borderBottomColor: theme.colors.border }}>
+              <Text style={{ fontWeight: 'bold', fontSize: theme.typography.subtitle.fontSize, color: theme.colors.text, marginBottom: theme.spacing.xs }}>Current Location</Text>
+              <View style={{ height: 180, borderRadius: theme.roundness, overflow: 'hidden', borderWidth: 1, borderColor: theme.colors.border }}>
                 {/* <MapView
                   style={{ flex: 1 }}
                   region={currentLocation ? {
@@ -294,12 +294,12 @@ const SafeZonesScreen = ({ navigation }) => {
                 </MapView> */}
               </View>
               {currentLocation ? (
-                <Text style={{ color: theme.colors.textSecondary, marginTop: 8 }}>
+                <Text style={{ color: theme.colors.textSecondary, marginTop: theme.spacing.xs }}>
                   Latitude: {currentLocation.latitude.toFixed(6)}{"\n"}
                   Longitude: {currentLocation.longitude.toFixed(6)}
                 </Text>
               ) : (
-                <Text style={{ color: theme.colors.textSecondary, marginTop: 8 }}>Location not available</Text>
+                <Text style={{ color: theme.colors.textSecondary, marginTop: theme.spacing.xs }}>Location not available</Text>
               )}
             </View>
           </View>
@@ -428,8 +428,8 @@ const SafeZonesScreen = ({ navigation }) => {
             <MaterialCommunityIcons 
               name="plus" 
               size={20} 
-              color="white" 
-              style={{ marginRight: 8 }}
+              color={theme.colors.textOnPrimary} 
+              style={{ marginRight: theme.spacing.xs }}
             />
             <Text style={styles.createFirstButtonText}>Create First Safe Zone</Text>
           </TouchableOpacity>
@@ -452,12 +452,12 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.background,
   },
   loadingText: {
-    marginTop: 16,
-    fontSize: theme.typography.body.fontSize,
+    marginTop: theme.spacing.md,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
   },
   header: {
-    padding: 20,
+    padding: theme.spacing.lg,
     backgroundColor: theme.colors.surface,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.border,
@@ -466,7 +466,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   titleSection: {
     flexDirection: 'row',
@@ -476,7 +476,7 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.title.fontSize,
     fontWeight: theme.typography.title.fontWeight,
     color: theme.colors.text,
-    marginLeft: 12,
+    marginLeft: theme.spacing.md,
   },
   addButton: {
     backgroundColor: theme.colors.primary,
@@ -487,17 +487,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   subtitle: {
-    fontSize: theme.typography.body.fontSize,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
-    lineHeight: 20,
+    lineHeight: theme.typography.body1.lineHeight,
   },
   mapSection: {
     height: 200,
   },
   mapContainer: {
     flex: 1,
-    margin: 16,
-    borderRadius: 8,
+    margin: theme.spacing.lg,
+    borderRadius: theme.roundness,
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: theme.colors.border,
@@ -509,8 +509,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listHeader: {
-    padding: 16,
-    paddingBottom: 8,
+    padding: theme.spacing.lg,
+    paddingBottom: theme.spacing.sm,
   },
   listTitle: {
     fontSize: theme.typography.subtitle.fontSize,
@@ -519,10 +519,10 @@ const styles = StyleSheet.create({
   },
   safeZoneCard: {
     backgroundColor: theme.colors.surface,
-    marginHorizontal: 16,
-    marginBottom: 12,
-    borderRadius: 8,
-    padding: 16,
+    marginHorizontal: theme.spacing.lg,
+    marginBottom: theme.spacing.md,
+    borderRadius: theme.roundness,
+    padding: theme.spacing.lg,
     borderWidth: 1,
     borderColor: theme.colors.border,
   },
@@ -530,7 +530,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 8,
+    marginBottom: theme.spacing.sm,
   },
   cardTitleSection: {
     flex: 1,
@@ -539,7 +539,7 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.subtitle.fontSize,
     fontWeight: theme.typography.subtitle.fontWeight,
     color: theme.colors.text,
-    marginBottom: 4,
+    marginBottom: theme.spacing.xxs,
   },
   statusContainer: {
     flexDirection: 'row',
@@ -549,49 +549,49 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    marginRight: 6,
+    marginRight: theme.spacing.xs,
   },
   statusText: {
     fontSize: theme.typography.caption.fontSize,
     fontWeight: '500',
   },
   centerButton: {
-    padding: 8,
+    padding: theme.spacing.sm,
   },
   zoneDescription: {
-    fontSize: theme.typography.body.fontSize,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
-    marginBottom: 12,
+    marginBottom: theme.spacing.md,
     fontStyle: 'italic',
   },
   zoneDetails: {
-    marginBottom: 16,
+    marginBottom: theme.spacing.lg,
   },
   detailRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 4,
+    marginBottom: theme.spacing.xxs,
   },
   detailText: {
     fontSize: theme.typography.caption.fontSize,
     color: theme.colors.textSecondary,
-    marginLeft: 8,
+    marginLeft: theme.spacing.xs,
   },
   cardActions: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    gap: 8,
+    gap: theme.spacing.sm,
   },
   actionButton: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 6,
+    paddingVertical: theme.spacing.sm,
+    paddingHorizontal: theme.spacing.md,
+    borderRadius: theme.roundness,
     borderWidth: 1,
-    gap: 4,
+    gap: theme.spacing.xs,
   },
   toggleButton: {
     borderColor: theme.colors.border,
@@ -599,11 +599,11 @@ const styles = StyleSheet.create({
   },
   editButton: {
     borderColor: theme.colors.primary,
-    backgroundColor: `${theme.colors.primary}10`,
+    backgroundColor: theme.colors.primaryLight,
   },
   deleteButton: {
     borderColor: theme.colors.error,
-    backgroundColor: `${theme.colors.error}10`,
+    backgroundColor: theme.colors.error + '10',
   },
   actionButtonText: {
     fontSize: theme.typography.caption.fontSize,
@@ -613,33 +613,33 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 40,
+    padding: theme.spacing.xxl,
   },
   emptyTitle: {
     fontSize: theme.typography.title.fontSize,
     fontWeight: theme.typography.title.fontWeight,
     color: theme.colors.text,
-    marginTop: 20,
-    marginBottom: 12,
+    marginTop: theme.spacing.xl,
+    marginBottom: theme.spacing.md,
   },
   emptyDescription: {
-    fontSize: theme.typography.body.fontSize,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
     textAlign: 'center',
-    lineHeight: 22,
-    marginBottom: 30,
+    lineHeight: theme.typography.body1.lineHeight,
+    marginBottom: theme.spacing.xl,
   },
   createFirstButton: {
     backgroundColor: theme.colors.primary,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 8,
+    paddingHorizontal: theme.spacing.xl,
+    paddingVertical: theme.spacing.md,
+    borderRadius: theme.roundness,
   },
   createFirstButtonText: {
     fontSize: theme.typography.button.fontSize,
-    color: 'white',
+    color: theme.colors.textOnPrimary,
     fontWeight: 'bold',
   },
   webMapPlaceholder: {
@@ -647,12 +647,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: theme.colors.surface,
-    borderRadius: 8,
+    borderRadius: theme.roundness,
     borderWidth: 1,
     borderColor: theme.colors.border,
   },
   webMapText: {
-    fontSize: theme.typography.body.fontSize,
+    fontSize: theme.typography.body1.fontSize,
     color: theme.colors.textSecondary,
     textAlign: 'center',
   },

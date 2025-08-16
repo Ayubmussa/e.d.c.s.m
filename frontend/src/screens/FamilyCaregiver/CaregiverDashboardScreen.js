@@ -235,8 +235,8 @@ const createStyles = (theme) => StyleSheet.create({
     elevation: 1,
   },
   statLabel: {
-    fontSize: 12,
-    color: theme.colors.text,
+    fontSize: theme.typography.caption.fontSize,
+    color: theme.colors.text.primary,
     marginTop: 4,
   },
   statValue: {

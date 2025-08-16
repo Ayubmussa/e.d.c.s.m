@@ -280,7 +280,7 @@ const HomeScreen = (props) => {
 
         {/* Wellness Status Card - Prominent and easy to read */}
         <View style={styles.section}>
-          <ThemedHeading level={3} style={[styles.sectionTitle, { color: '#000000', fontWeight: 'bold' }]}>
+          <ThemedHeading level={3} style={[styles.sectionTitle, { color: theme.colors.text.primary, fontWeight: 'bold' }]}>
             Today's Wellness
           </ThemedHeading>
           <WellnessCard
@@ -291,7 +291,7 @@ const HomeScreen = (props) => {
             color={wellnessStatus.color}
             style={styles.wellnessCard}
           >
-            <ThemedText variant="bodyLarge" style={[styles.wellnessMessage, { color: '#000000', fontWeight: 'bold' }]}>
+            <ThemedText variant="bodyLarge" style={[styles.wellnessMessage, { color: theme.colors.text.primary, fontWeight: 'bold' }]}>
               {wellnessStatus.message}
             </ThemedText>
           </WellnessCard>

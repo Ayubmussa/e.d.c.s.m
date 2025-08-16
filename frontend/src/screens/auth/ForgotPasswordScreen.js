@@ -18,7 +18,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { useLocalization } from '../../context/LocalizationContext';
 import authService from '../../services/authService';
 
-const BG_IMAGE = require('../../../assets/forgotpassword.png');
+const BG_IMAGE = require('../../../assets/aa.png');
 
 const ForgotPasswordScreen = ({ navigation }) => {
   const { theme } = useTheme();
@@ -278,21 +278,21 @@ const createStyles = (theme) =>
       marginBottom: theme.spacing.lg,
     },
     label: {
-      color: '#ffffff',
+      color: theme.colors.textOnPrimary,
       fontWeight: 'bold',
-      fontSize: 18, // increased from 16
+      fontSize: theme.typography.bodyLarge.fontSize,
       alignSelf: 'flex-start',
-      marginLeft: 8,
+      marginLeft: theme.spacing.sm,
       marginBottom: theme.spacing.sm,
     },
     inputWrapper: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: '#ffffff',
-      borderRadius: 24,
+      backgroundColor: theme.colors.surface,
+      borderRadius: theme.roundness,
       paddingHorizontal: theme.spacing.md,
-      minHeight: 56, // increased height for elderly users
-      shadowColor: '#000',
+      minHeight: 56,
+      shadowColor: theme.colors.shadow,
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.08,
       shadowRadius: 8,
@@ -303,36 +303,36 @@ const createStyles = (theme) =>
     },
     input: {
       flex: 1,
-      fontSize: 18, // increased from 16
+      fontSize: theme.typography.bodyLarge.fontSize,
       color: theme.colors.text.primary,
       paddingVertical: theme.spacing.md,
-      minHeight: 24, // ensure text is properly sized
+      minHeight: 24,
     },
     validationIcon: {
       marginLeft: theme.spacing.sm,
     },
     errorText: {
-      color: '#ff4444',
-      fontSize: 16, // increased from 13
+      color: theme.colors.error,
+      fontSize: theme.typography.bodyMedium.fontSize,
       marginTop: theme.spacing.sm,
-      marginLeft: 8,
+      marginLeft: theme.spacing.sm,
       alignSelf: 'flex-start',
     },
     resetButton: {
       width: '100%',
-      borderRadius: 24,
+      borderRadius: theme.roundness,
       marginTop: theme.spacing.xl,
-      backgroundColor: '#3BA4F9',
+      backgroundColor: theme.colors.primary,
       elevation: 3,
-      shadowColor: '#3BA4F9',
+      shadowColor: theme.colors.primary,
       shadowOffset: { width: 0, height: 3 },
       shadowOpacity: 0.15,
       shadowRadius: 10,
-      minHeight: 56, // elderly-friendly height
+      minHeight: 56,
     },
     resetButtonDisabled: {
-      backgroundColor: '#cccccc',
-      shadowColor: '#cccccc',
+      backgroundColor: theme.colors.disabled,
+      shadowColor: theme.colors.disabled,
     },
     backToLoginContainer: {
       flexDirection: 'row',
@@ -342,13 +342,13 @@ const createStyles = (theme) =>
       paddingVertical: theme.spacing.sm,
     },
     backToLoginText: {
-      color: '#ffffff',
-      fontSize: 16, // increased from 14
+      color: theme.colors.textOnPrimary,
+      fontSize: theme.typography.bodyMedium.fontSize,
     },
     backToLoginLink: {
-      color: '#3BA4F9',
+      color: theme.colors.primary,
       fontWeight: 'bold',
-      fontSize: 16, // increased from 14
+      fontSize: theme.typography.bodyMedium.fontSize,
       textDecorationLine: 'underline',
     },
   });
